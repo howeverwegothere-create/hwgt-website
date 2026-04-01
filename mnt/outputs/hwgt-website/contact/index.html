@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | However We Got Here</title>
+  <meta name="description" content="Get in touch with HWGT or join the podcast waitlist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page-body">
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        HWGT
+        <span>However We Got Here</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/trades/">Trades</a></li>
+        <li><a href="/why/">Why?</a></li>
+        <li><a href="/guests/">Guests</a></li>
+        <li><a href="/listener/">Listener</a></li>
+        <li><a href="/outdoors/">Outdoors</a></li>
+        <li><a href="/contact/" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Get in Touch</p>
+      <h1>Contact Us</h1>
+      <div class="divider"></div>
+      <p>Have a question, or want to join the waitlist? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <p class="section-label">Reach Out</p>
+          <h2>Let's Talk</h2>
+          <div class="divider"></div>
+          <p style="color:var(--cream-dark);">
+            We're not currently accepting new clients — but if you believe there's a fit, we'd love to hear about your work. Use the form to introduce yourself or ask a question, and check the box to request a reply.
+          </p>
+          <p class="mt-16" style="color:var(--cream-dark);">
+            If you're looking to request a podcast episode, head over to the <a href="/listener/" style="color:var(--gold);text-decoration:underline;">Listener page</a> instead.
+          </p>
+          <div class="mt-40">
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div>
+                <p class="section-label" style="margin-bottom:4px;">Response Time</p>
+                <p style="color:var(--cream-dark);font-size:0.92rem;">We reply to all inquiries — just not always quickly. We appreciate your patience.</p>
+              </div>
+              <div>
+                <p class="section-label" style="margin-bottom:4px;">New Client Availability</p>
+                <p style="color:var(--cream-dark);font-size:0.92rem;">Currently closed. Join the waitlist and we'll reach out when an opening becomes available.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <form class="contact-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="contact-name">Name <span style="color:var(--gold);">*</span></label>
+                <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email <span style="color:var(--gold);">*</span></label>
+                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" placeholder="Tell us about yourself or your question…"></textarea>
+              </div>
+              <label class="checkbox-row">
+                <input type="checkbox" name="reply-requested" />
+                Check this box to request a reply to your inquiry
+              </label>
+              <button type="submit" class="btn btn-gold" style="width:100%;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>HWGT</h3>
+          <p>However We Got Here — business development consulting, client immersion, and outdoor experience retreats.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About & Services</a></li>
+            <li><a href="/why/">Why? (FAQ)</a></li>
+            <li><a href="/guests/">Guests</a></li>
+            <li><a href="/listener/">Listener</a></li>
+            <li><a href="/outdoors/">Red Squirrel Outdoors</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 HWGH/GT. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
