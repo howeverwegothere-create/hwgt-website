@@ -9,6 +9,191 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Outdoors Hero ── */
+    .outdoors-hero {
+      position: relative;
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 72px;
+      overflow: hidden;
+    }
+    .outdoors-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&auto=format&fit=crop&q=75');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+    .outdoors-hero-bg.loaded { transform: scale(1); }
+    .outdoors-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(37,42,44,0.35) 0%,
+        rgba(37,42,44,0.55) 55%,
+        rgba(37,42,44,0.88) 100%
+      );
+    }
+    .outdoors-hero .container { position: relative; z-index: 1; }
+    .outdoors-hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      color: var(--cream);
+      line-height: 1.05;
+    }
+
+    /* ── Attribute badges ── */
+    .attr-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .attr-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,42,44,0.7);
+      border: 1px solid rgba(181,117,74,0.35);
+      border-radius: 40px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      color: var(--cream);
+      letter-spacing: 0.03em;
+      backdrop-filter: blur(8px);
+    }
+    .attr-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── Experience cards ── */
+    .experience-list { display: flex; flex-direction: column; gap: 0; }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+      overflow: hidden;
+    }
+    .experience-item:nth-child(even) { direction: rtl; }
+    .experience-item:nth-child(even) > * { direction: ltr; }
+
+    .experience-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .experience-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .experience-item:hover .experience-image img { transform: scale(1.05); }
+
+    .experience-body {
+      background: var(--charcoal);
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .experience-item:nth-child(odd) .experience-body {
+      background: var(--charcoal);
+    }
+    .experience-item:nth-child(even) .experience-body {
+      background: var(--charcoal-light);
+    }
+
+    .experience-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: rgba(181,117,74,0.18);
+      margin-bottom: -12px;
+      letter-spacing: -0.02em;
+    }
+    .experience-body h3 {
+      font-size: 1.7rem;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+    .experience-body p {
+      color: var(--cream-dark);
+      font-size: 0.97rem;
+      line-height: 1.75;
+      max-width: 400px;
+    }
+    .experience-tag {
+      display: inline-block;
+      background: rgba(181,117,74,0.12);
+      border: 1px solid rgba(181,117,74,0.25);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    /* ── Philosophy card ── */
+    .philosophy-card {
+      background: var(--charcoal-light);
+      border: 1px solid rgba(226,214,196,0.08);
+      border-radius: 12px;
+      padding: 52px 48px;
+    }
+
+    /* ── Stats row ── */
+    .outdoors-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(226,214,196,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .outdoors-stat {
+      background: var(--charcoal);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .outdoors-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .outdoors-stat-label {
+      font-size: 0.78rem;
+      color: var(--cream-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 840px) {
+      .experience-item { grid-template-columns: 1fr; min-height: auto; }
+      .experience-item:nth-child(even) { direction: ltr; }
+      .experience-image { aspect-ratio: 16/9; min-height: 260px; }
+      .experience-body { padding: 40px 28px; }
+      .experience-num { font-size: 3rem; }
+      .outdoors-stats { grid-template-columns: 1fr; }
+      .philosophy-card { padding: 36px 28px; }
+    }
+  </style>
 </head>
 <body class="page-body">
 
@@ -27,28 +212,37 @@
         <li><a href="/about/">About</a></li>
         <li><a href="/trades/">Trades</a></li>
         <li><a href="/why/">Why?</a></li>
-        <li><a href="/guests/">Guests</a></li>
-        <li><a href="/listener/">Listener</a></li>
-        <li><a href="/outdoors/">Outdoors</a></li>
+        <li><a href="/podcast/">Podcast</a></li>
+        <li><a href="/outdoors/" class="active">Outdoors</a></li>
         <li><a href="/contact/" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
+  <!-- Hero -->
+  <section class="outdoors-hero">
+    <div class="outdoors-hero-bg" id="outdoors-hero-bg"></div>
+    <div class="outdoors-hero-overlay"></div>
     <div class="container">
       <p class="section-label">Client Immersion</p>
-      <h1>Red Squirrel Outdoors</h1>
-      <div class="divider"></div>
-      <p>Slow down. Reset the mind. Reconnect with the mission.</p>
+      <h1>Red Squirrel<br/>Outdoors</h1>
+      <div class="divider" style="margin:20px 0;"></div>
+      <p style="color:rgba(226,214,196,0.85);font-size:1.1rem;max-width:520px;line-height:1.7;">
+        Slow down. Reset the mind. Reconnect with the mission.
+      </p>
+      <div class="attr-badges">
+        <div class="attr-badge"><div class="attr-badge-dot"></div>Invite-Only</div>
+        <div class="attr-badge"><div class="attr-badge-dot"></div>Alaska Licensed Guide</div>
+        <div class="attr-badge"><div class="attr-badge-dot"></div>No Two the Same</div>
+        <div class="attr-badge"><div class="attr-badge-dot"></div>Built Into Client Work</div>
+      </div>
     </div>
   </section>
 
-  <!-- Intro -->
+  <!-- Philosophy -->
   <section class="section section-dark">
     <div class="container">
-      <div class="grid-2">
+      <div class="grid-2" style="align-items:center;gap:64px;">
         <div>
           <p class="section-label">The Philosophy</p>
           <h2>The Best Thinking Rarely Happens Under Fluorescent Lights</h2>
@@ -61,29 +255,18 @@
           </p>
         </div>
         <div>
-          <div class="card">
-            <div style="display:flex;flex-direction:column;gap:16px;">
-              <div style="display:flex;align-items:center;gap:12px;">
-                <span style="font-size:1.5rem;">🎫</span>
-                <div>
-                  <h4>Invite-Only</h4>
-                  <p style="font-size:0.88rem;color:var(--cream-dark);">Built into client work, not sold separately</p>
-                </div>
-              </div>
-              <div style="display:flex;align-items:center;gap:12px;">
-                <span style="font-size:1.5rem;">🏔️</span>
-                <div>
-                  <h4>No Two the Same</h4>
-                  <p style="font-size:0.88rem;color:var(--cream-dark);">Designed by mutual fit, interest, and engagement goals</p>
-                </div>
-              </div>
-              <div style="display:flex;align-items:center;gap:12px;">
-                <span style="font-size:1.5rem;">🎣</span>
-                <div>
-                  <h4>Licensed Guide</h4>
-                  <p style="font-size:0.88rem;color:var(--cream-dark);">Licensed fly fishing guide in the State of Alaska</p>
-                </div>
-              </div>
+          <div class="outdoors-stats">
+            <div class="outdoors-stat">
+              <span class="outdoors-stat-num">100%</span>
+              <span class="outdoors-stat-label">Invite-Only</span>
+            </div>
+            <div class="outdoors-stat">
+              <span class="outdoors-stat-num">AK</span>
+              <span class="outdoors-stat-label">Licensed Guide</span>
+            </div>
+            <div class="outdoors-stat">
+              <span class="outdoors-stat-num">∞</span>
+              <span class="outdoors-stat-label">Tailored to You</span>
             </div>
           </div>
         </div>
@@ -91,51 +274,128 @@
     </div>
   </section>
 
-  <!-- Activities -->
-  <section class="section section-mid">
-    <div class="container">
-      <p class="section-label">What We Do</p>
-      <h2 class="mb-16">Experiences at Red Squirrel Outdoors</h2>
-      <div class="divider"></div>
-      <div class="activity-grid mt-40">
-        <div class="activity-card">
-          <div class="emoji">🎣</div>
+  <!-- Experiences — alternating image/text -->
+  <section style="background:var(--charcoal);">
+    <div style="max-width:1400px;margin:0 auto;">
+      <div style="padding:64px 40px 24px;text-align:center;">
+        <p class="section-label center">What We Do</p>
+        <h2 class="center">Experiences at Red Squirrel Outdoors</h2>
+        <div class="divider center" style="margin:20px auto;"></div>
+      </div>
+    </div>
+
+    <div class="experience-list">
+
+      <!-- 1. Fly Fishing -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=75"
+            alt="Fly fishing on a clear mountain river in Alaska"
+            loading="lazy"
+          />
+        </div>
+        <div class="experience-body">
+          <div class="experience-num">01</div>
+          <div class="experience-tag">Fly Fishing</div>
           <h3>Fly Fishing Retreats</h3>
           <p>Quiet water, intentional conversation, and the rhythm of the cast. We are a licensed fly fishing guide in the State of Alaska — and depending on the season, we fish some of the most remarkable waters in the world.</p>
         </div>
-        <div class="activity-card">
-          <div class="emoji">🚵‍♂️</div>
+      </div>
+
+      <!-- 2. Mountain Biking -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img
+            src="https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=900&auto=format&fit=crop&q=75"
+            alt="Mountain biking on rugged singletrack trail"
+            loading="lazy"
+          />
+        </div>
+        <div class="experience-body">
+          <div class="experience-num">02</div>
+          <div class="experience-tag">Mountain Biking</div>
           <h3>Mountain Biking</h3>
           <p>For clients who crave movement and challenge, we explore curated trails that match skill levels and desired intensity. These rides spark conversation, test limits, and shake loose stagnant thinking.</p>
         </div>
-        <div class="activity-card">
-          <div class="emoji">🥾</div>
+      </div>
+
+      <!-- 3. Hiking -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img
+            src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&auto=format&fit=crop&q=75"
+            alt="High-altitude hiking on a mountain ridge trail"
+            loading="lazy"
+          />
+        </div>
+        <div class="experience-body">
+          <div class="experience-num">03</div>
+          <div class="experience-tag">High-Altitude Hiking</div>
           <h3>High-Altitude Hiking</h3>
           <p>Some of our best strategic sessions take place one step at a time. From alpine lakes to forested paths, hikes create a natural space to ask better questions — and hear better answers.</p>
         </div>
-        <div class="activity-card">
-          <div class="emoji">🍷</div>
+      </div>
+
+      <!-- 4. Culinary -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&auto=format&fit=crop&q=75"
+            alt="Farm-to-table culinary retreat dining experience"
+            loading="lazy"
+          />
+        </div>
+        <div class="experience-body">
+          <div class="experience-num">04</div>
+          <div class="experience-tag">Culinary Retreats</div>
           <h3>Culinary Retreats</h3>
           <p>Relationships often deepen over food. We've partnered with local chefs and foragers to host intimate dining experiences, cooking sessions, and farm-to-table tastings that complement the work we're doing together.</p>
         </div>
-        <div class="activity-card">
-          <div class="emoji">🧘</div>
-          <h3>Meditation & Mindfulness</h3>
+      </div>
+
+      <!-- 5. Meditation -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&auto=format&fit=crop&q=75"
+            alt="Meditation and mindfulness in a serene natural setting"
+            loading="lazy"
+          />
+        </div>
+        <div class="experience-body">
+          <div class="experience-num">05</div>
+          <div class="experience-tag">Mindfulness</div>
+          <h3>Meditation &amp; Mindfulness</h3>
           <p>Stillness matters. We offer guided sessions and quiet environments for clients looking to reset and return to the work with a clear head and renewed energy.</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Disclosure -->
-  <section class="section-sm section-dark">
-    <div class="container" style="max-width:700px;">
-      <div class="card" style="border-color:rgba(201,168,76,0.2);">
+  <section class="section section-dark">
+    <div class="container" style="max-width:720px;">
+      <div class="card" style="border-color:rgba(181,117,74,0.2);padding:44px 40px;">
         <h3 class="gold mb-16">Important Disclosure</h3>
-        <p style="color:var(--cream-dark);font-size:0.92rem;">
+        <p style="color:var(--cream-dark);font-size:0.95rem;line-height:1.8;">
           These experiences are not the core of what we do — they are an intentional complement to the consulting relationship. They are designed to foster clarity, collaboration, and trust, and are built into client engagements based on mutual fit and the goals of the partnership. These are invite-only and not available for standalone purchase.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm section-mid">
+    <div class="container center">
+      <p class="section-label">Interested?</p>
+      <h2>Start With the Relationship</h2>
+      <div class="divider center"></div>
+      <p class="mt-16" style="color:var(--cream-dark);max-width:480px;margin-inline:auto;">
+        Red Squirrel Outdoors experiences are built into client engagements — they're not booked separately. Start by getting in touch.
+      </p>
+      <a href="/contact/" class="btn btn-gold mt-40">Get in Touch</a>
     </div>
   </section>
 
@@ -151,10 +411,9 @@
           <h4>Pages</h4>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/about/">About & Services</a></li>
+            <li><a href="/about/">About &amp; Services</a></li>
             <li><a href="/why/">Why? (FAQ)</a></li>
-            <li><a href="/guests/">Guests</a></li>
-            <li><a href="/listener/">Listener</a></li>
+            <li><a href="/podcast/">Podcast</a></li>
             <li><a href="/outdoors/">Red Squirrel Outdoors</a></li>
             <li><a href="/contact/">Contact</a></li>
           </ul>
@@ -168,5 +427,10 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    // Ken Burns effect on hero bg
+    const bg = document.getElementById('outdoors-hero-bg');
+    if (bg) { requestAnimationFrame(() => bg.classList.add('loaded')); }
+  </script>
 </body>
 </html>
