@@ -3,14 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About & Revenue Services | However We Got Here</title>
-  <meta name="description" content="Data-driven outbound sales, creator partnerships, and revenue operations from HWGT." />
+  <title>About Mike Petroskey | However We Got Here</title>
+  <meta name="description" content="Growth architect, CRO, and revenue consultant. Business coaching, consulting, pipeline development, sales team training, systems implementation, and technology integrations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Stone Palette (from Lake Michigan shoreline) ── */
+    :root {
+      --charcoal:      #1E2428;
+      --charcoal-light:#272E34;
+      --stone:         #323A42;
+      --stone-warm:    #3A3028;
+      --gold:          #B5754A;
+      --gold-light:    #CC9168;
+      --cream:         #EAE0D2;
+      --cream-dark:    #C8B49A;
+      --white:         #F4EDE4;
+      --text-muted:    #8A7D70;
+      --nav-height:    72px;
+      --radius:        6px;
+      --transition:    0.25s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--charcoal); color: var(--cream); font-family: 'Inter', sans-serif; line-height: 1.7; }
+
+    /* ── Nav ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-height); background: rgba(30,36,40,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,117,74,0.15); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { text-decoration: none; color: var(--gold); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em; line-height: 1.2; }
+    .nav-logo span { display: block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dark); font-weight: 400; }
+    .nav-links { list-style: none; display: flex; gap: 32px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--cream-dark); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: color var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links a.active { border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+    .nav-cta { background: var(--gold) !important; color: var(--charcoal) !important; padding: 8px 20px !important; border-radius: var(--radius) !important; font-weight: 600 !important; border-bottom: none !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-toggle { display: none; }
+
+    /* ── Hero ── */
+    .about-hero {
+      padding-top: var(--nav-height);
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(150deg, #1A1E24 0%, #222830 55%, #1E2428 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=1400&auto=format&fit=crop&q=60') center/cover no-repeat;
+      opacity: 0.12;
+    }
+    .about-hero .container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 80px 32px; }
+    .section-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 16px; display: block; }
+    .about-hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4.2rem); line-height: 1.1; color: var(--cream); margin-bottom: 24px; }
+    .about-hero h1 em { font-style: italic; color: var(--gold); }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin: 24px 0; }
+    .about-hero p { font-size: 1.12rem; color: rgba(234,224,210,0.8); max-width: 580px; line-height: 1.75; }
+
+    /* ── Sections ── */
+    .section { padding: 96px 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .section-dark { background: var(--charcoal-light); }
+    .section-mid  { background: var(--stone); }
+    .section-warm { background: var(--stone-warm); }
+
+    h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; color: var(--cream); margin-bottom: 16px; }
+    h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 10px; }
+    p { color: var(--cream-dark); line-height: 1.75; }
+    .mt-16 { margin-top: 16px; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+    .mb-16 { margin-bottom: 16px; }
+
+    /* ── Bio Card ── */
+    .bio-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: center; }
+    .bio-avatar { width: 180px; height: 180px; border-radius: 50%; background: var(--stone); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 4rem; font-weight: 700; color: var(--gold); font-family: 'Playfair Display', serif; }
+    .bio-left { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+    .bio-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(181,117,74,0.12); border: 1px solid rgba(181,117,74,0.3); color: var(--gold); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; }
+    .bio-right h2 { margin-bottom: 8px; }
+    .bio-name-sub { font-size: 0.9rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-bottom: 20px; }
+
+    /* ── Service Cards ── */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
+    .service-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(181,117,74,0.15);
+      border-radius: 10px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .service-card:hover { border-color: rgba(181,117,74,0.4); transform: translateY(-4px); }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+    .service-card h3 { font-size: 1.25rem; color: var(--cream); margin-bottom: 12px; }
+    .service-card p { font-size: 0.95rem; color: var(--cream-dark); line-height: 1.7; }
+
+    /* ── Stats Row ── */
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(181,117,74,0.2); border-radius: 10px; overflow: hidden; margin-top: 56px; }
+    .stat { padding: 40px 32px; text-align: center; border-right: 1px solid rgba(181,117,74,0.15); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: 'Playfair Display', Georgia, serif; font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+    .stat-label { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dark); }
+
+    /* ── Engagement Ways ── */
+    .engage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+    .engage-card { background: rgba(30,36,40,0.6); border: 1px solid rgba(181,117,74,0.15); border-radius: 10px; padding: 36px 32px; }
+    .engage-card h3 { font-size: 1.18rem; color: var(--gold); margin-bottom: 12px; }
+    .engage-card p { font-size: 0.94rem; color: var(--cream-dark); }
+
+    /* ── CTA ── */
+    .cta-section { background: linear-gradient(135deg, #1A1E24, #222830); padding: 96px 0; text-align: center; }
+    .cta-section h2 { margin-bottom: 20px; }
+    .cta-section p { font-size: 1.05rem; max-width: 520px; margin: 0 auto 40px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 34px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all var(--transition); cursor: pointer; border: none; letter-spacing: 0.04em; }
+    .btn-primary { background: var(--gold); color: var(--charcoal); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(234,224,210,0.4); margin-left: 16px; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── Footer ── */
+    .footer { background: #14181C; border-top: 1px solid rgba(181,117,74,0.15); padding: 56px 0 32px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand h3 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.4rem; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.9rem; color: var(--text-muted); max-width: 280px; line-height: 1.7; }
+    .footer-nav h4 { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; font-weight: 600; }
+    .footer-nav ul { list-style: none; }
+    .footer-nav li { margin-bottom: 10px; }
+    .footer-nav a { text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: color var(--transition); }
+    .footer-nav a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .bio-wrap { grid-template-columns: 1fr; }
+      .bio-left { align-items: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(181,117,74,0.15); }
+      .stat:last-child { border-bottom: none; }
+      .engage-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+      .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--cream); border-radius: 2px; }
+    }
+  </style>
 </head>
-<body class="page-body">
+<body>
 
   <!-- Navigation -->
   <nav class="nav">
@@ -24,10 +182,9 @@
       </button>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
+        <li><a href="/about/" class="active">About</a></li>
         <li><a href="/trades/">Trades</a></li>
         <li><a href="/why/">Why?</a></li>
-        
         <li><a href="/podcast/">Podcast</a></li>
         <li><a href="/outdoors/">Outdoors</a></li>
         <li><a href="/contact/" class="nav-cta">Contact</a></li>
@@ -35,152 +192,138 @@
     </div>
   </nav>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
+  <!-- Hero -->
+  <section class="about-hero">
     <div class="container">
-      <p class="section-label">What We Do</p>
-      <h1>HWGT Revenue Services</h1>
+      <span class="section-label">Growth Architect · CRO · Consultant</span>
+      <h1>Building Revenue<br/>Engines That <em>Last.</em></h1>
       <div class="divider"></div>
-      <p>Data-driven revenue growth for B2B companies and modern content creators — without wasting time.</p>
+      <p>Twenty-plus years of building and scaling high-performance revenue teams — from the ground up and from the inside out.</p>
     </div>
   </section>
 
-  <!-- The Problem -->
-  <section class="section section-dark">
+  <!-- Bio -->
+  <section class="section">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <p class="section-label">The Challenge</p>
-          <h2>The Right Audience.<br/>Every Time.</h2>
-          <div class="divider"></div>
-          <p style="color:var(--cream-dark);">
-            Modern businesses and creators face an overwhelming challenge: reaching the right audience, efficiently, while optimizing revenue for sustainable growth.
-          </p>
-          <p class="mt-16" style="color:var(--cream-dark);">
-            At HWGT, we provide a systematic, data-driven approach to outbound sales, creator partnerships, and revenue operations that turns your business into a predictable growth engine.
-          </p>
-          <p class="mt-16" style="color:var(--cream-dark);">
-            We equip companies with the tools, strategies, and automation needed to scale pipeline generation, improve conversion rates, and maximize revenue potential — without wasting time.
-          </p>
+      <div class="bio-wrap">
+        <div class="bio-left">
+          <div class="bio-avatar">M</div>
+          <span class="bio-tag">Growth Architect &amp; CRO</span>
         </div>
-        <div>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div>
-                <h4>Deep Market Research & Ideal Customer Profiling</h4>
-                <p>Success starts with precision. We analyze your ecosystem, competitors, and historical data to identify high-value prospects and ensure every campaign is laser-focused.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div>
-                <h4>Intelligent Data Acquisition & Enrichment</h4>
-                <p>Most teams struggle with incomplete or outdated data. We leverage advanced data-scraping and enrichment tools to keep your contact lists accurate and actionable.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div>
-                <h4>Automated Outbound Prospecting</h4>
-                <p>We build a self-sustaining outbound system that drives scalable lead generation — so your team spends time closing, not hunting.</p>
-              </div>
-            </div>
-          </div>
+        <div class="bio-right">
+          <span class="section-label">Who Is Mike</span>
+          <h2>Mike Petroskey</h2>
+          <p class="bio-name-sub">Alta Vista Technology · Denver, CO</p>
+          <p>Mike is a growth architect and revenue leader who has spent more than two decades building sales teams, fixing broken pipelines, and turning underperforming revenue organizations into engines people are proud of.</p>
+          <p class="mt-16">Whether he's standing up a CRM from scratch, coaching a first-time VP of Sales through their first QBR, or redesigning a comp plan that actually motivates the right behavior — Mike works in the details without losing sight of the strategy.</p>
+          <p class="mt-16">He works with a small, deliberate set of clients. If you're on this page, you likely already know someone who knows him.</p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years in Revenue Leadership</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Industries Served</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">0</div>
+          <div class="stat-label">Generic Playbooks. Ever.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- B2B Services -->
-  <section class="section section-mid">
+  <!-- Services -->
+  <section class="section section-dark">
     <div class="container">
-      <p class="section-label">For B2B Companies</p>
-      <h2 class="mb-16">Outbound & Pipeline Services</h2>
+      <span class="section-label">What We Do</span>
+      <h2>Consulting Services</h2>
       <div class="divider"></div>
-      <ul class="check-list mt-40">
-        <li>
-          <div>
-            <strong>Data-Enriched & Verified Contact Lists</strong>
-            <p>Ensure every outreach effort targets high-value prospects with up-to-date, verified contact data.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Hyper-Personalized Outreach Sequences</strong>
-            <p>AI-driven messaging frameworks that dynamically adjust based on recipient behavior and engagement signals.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Seamless CRM & Sales Tech Stack Integration</strong>
-            <p>Automate lead flow directly into your existing CRM — HubSpot, Salesforce, Pipedrive — for seamless tracking and follow-up.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Actionable Insights & Performance Reports</strong>
-            <p>Data-driven feedback loops to improve conversion rates and maximize pipeline efficiency over time.</p>
-          </div>
-        </li>
-      </ul>
+      <p style="max-width:600px;">Every engagement starts with listening. What you actually need might be different from what you think you need — and that's fine. Here's the range of work Mike takes on.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <span class="service-icon">🧭</span>
+          <h3>Business Coaching</h3>
+          <p>One-on-one coaching for founders, sales leaders, and revenue executives. A trusted thought partner for working through strategy, leadership challenges, hiring decisions, and the things you can't say in the all-hands.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⚙️</span>
+          <h3>Consulting</h3>
+          <p>Project-based and retainer engagements. Bring in fractional CRO-level leadership without the full-time overhead. Ideal for companies in transition, growth mode, or recovering from a difficult quarter.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">📈</span>
+          <h3>Pipeline Development</h3>
+          <p>Build sustainable, repeatable pipeline from the ground up — or fix one that's leaking. ICP definition, outbound infrastructure, prospecting cadences, and the accountability structures that make it all stick.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🎯</span>
+          <h3>Sales Team Training</h3>
+          <p>Rep coaching, manager development, and team-wide workshops. Playbook creation, role-play, live deal reviews — customized to your team's actual gaps, not a recycled curriculum from someone else's org.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🏗️</span>
+          <h3>Systems Implementation &amp; Enablement</h3>
+          <p>Stand up or optimize the workflows, processes, and infrastructure your revenue team runs on. Onboarding frameworks, comp plan design, QBR structure, sales playbooks — built to last beyond the engagement.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🔗</span>
+          <h3>Technology Integrations</h3>
+          <p>CRM selection, configuration, and full implementation. Tech stack rationalization and integration — connecting HubSpot, Salesforce, and the rest of the tools your team actually uses into something coherent.</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- Creator Services -->
-  <section class="section section-dark">
+  <!-- How We Work -->
+  <section class="section">
     <div class="container">
-      <p class="section-label">For Content Creators</p>
-      <h2 class="mb-16">Creator Partnership & Monetization</h2>
+      <span class="section-label">How It Works</span>
+      <h2>Ways to Engage</h2>
       <div class="divider"></div>
-      <ul class="check-list mt-40">
-        <li>
-          <div>
-            <strong>Brand Partnership Targeting & Outreach</strong>
-            <p>Identify, prioritize, and connect with ideal brand partners aligned with your audience, niche, and content style.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Social Profile Optimization</strong>
-            <p>Improve visibility, credibility, and conversion across key platforms with optimized bios, link trees, and content positioning.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Revenue Stream Mapping</strong>
-            <p>Build and structure multiple income channels through brand deals, affiliate programs, merchandise, and sponsored content.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Campaign Deck & Media Kit Creation</strong>
-            <p>Custom-branded pitch decks and media kits designed to win over sponsors and close deals faster.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Content Calendar Strategy</strong>
-            <p>Align your content cadence with partnership goals and platform trends to maximize monetization and engagement.</p>
-          </div>
-        </li>
-      </ul>
+      <p style="max-width:580px;">Mike works with a limited number of clients at any given time. Every engagement is scoped honestly — no retainers that outlive their usefulness.</p>
+
+      <div class="engage-grid">
+        <div class="engage-card">
+          <h3>Fractional CRO</h3>
+          <p>Ongoing revenue leadership on a part-time basis. Typically 1–2 days per week. Best for companies between $2M–$20M ARR who need senior leadership but aren't ready for a full-time hire.</p>
+        </div>
+        <div class="engage-card">
+          <h3>Project-Based Consulting</h3>
+          <p>Defined scope, defined timeline, defined outcome. CRM buildouts, pipeline audits, go-to-market strategy — delivered and done. Usually 30–90 day engagements.</p>
+        </div>
+        <div class="engage-card">
+          <h3>Executive Coaching</h3>
+          <p>Regular 1:1 sessions for revenue leaders who want a trusted outside perspective. Monthly or bi-weekly cadence. Confidential by design.</p>
+        </div>
+        <div class="engage-card">
+          <h3>Team Training &amp; Workshops</h3>
+          <p>One-time or recurring engagements to upskill a sales team, launch a new playbook, or reset the culture around pipeline and performance. In-person or remote.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section-sm section-mid">
-    <div class="container center">
-      <span class="pill">Limited Availability</span>
-      <h2 class="mt-24">Ready to Build Something Real?</h2>
-      <div class="divider center"></div>
-      <p style="color:var(--cream-dark);margin-inline:auto;" class="mt-16">
-        We're not currently accepting new clients, but we'd love to learn about your work. Join the waitlist and we'll be in touch when there's an opening.
-      </p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;" class="mt-40">
-        <a href="/contact/" class="btn btn-gold">Join the Waitlist</a>
-        <a href="/why/" class="btn btn-outline">Read the FAQ</a>
-      </div>
+  <section class="cta-section">
+    <div class="container">
+      <span class="section-label">Ready to Talk?</span>
+      <h2>Let's Figure Out If It's a Fit.</h2>
+      <p>No pitch deck. No discovery form with seventeen fields. Just a conversation about where you are and where you're trying to go.</p>
+      <a href="/contact/" class="btn btn-primary">Start the Conversation</a>
+      <a href="/trades/" class="btn btn-outline">See Trades Work</a>
     </div>
   </section>
 
@@ -196,18 +339,25 @@
           <h4>Pages</h4>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/about/">About & Services</a></li>
+            <li><a href="/about/">About &amp; Services</a></li>
+            <li><a href="/trades/">Trades Consulting</a></li>
             <li><a href="/why/">Why? (FAQ)</a></li>
-            
             <li><a href="/podcast/">Podcast</a></li>
-            <li><a href="/outdoors/">Red Squirrel Outdoors</a></li>
+            <li><a href="/outdoors/">Outdoors</a></li>
             <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/contact/">Get in Touch</a></li>
+            <li><a href="/podcast/">Request an Episode</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 HWGH/GT. All rights reserved.</span>
-        <span>Built with intention.</span>
+        <p>&copy; 2026 However We Got Here. All rights reserved.</p>
+        <p>Built for the discerning few.</p>
       </div>
     </div>
   </footer>
