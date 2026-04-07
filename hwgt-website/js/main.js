@@ -51,23 +51,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* --- Contact Form --- */
+  /* --- Contact Form (formsubmit.co) --- */
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent ✓';
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      btn.style.background = 'var(--green-accent)';
-      btn.style.color = 'var(--cream)';
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
+
+      const data = Object.fromEntries(new FormData(form));
+
+      fetch('https://formsubmit.co/ajax/howeverwegothere@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(r => r.json())
+      .then(res => {
+        if (res.success === 'true' || res.success === true) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = 'var(--green-accent)';
+          btn.style.color = 'var(--cream)';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 4000);
+        } else {
+          btn.textContent = 'Try Again';
+          btn.disabled = false;
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Try Again';
         btn.disabled = false;
-        btn.style.background = '';
-        btn.style.color = '';
-      }, 4000);
+      });
     });
   }
 
