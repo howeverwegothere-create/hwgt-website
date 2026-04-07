@@ -245,10 +245,11 @@
   <!-- Hero — Video Background -->
   <section class="hero">
     <div class="hero-video-wrap">
-      <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <video autoplay muted playsinline preload="auto" aria-hidden="true" id="heroVideo">
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
       <div class="hero-video-overlay"></div>
+      <div id="heroFadeOverlay" style="position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:3;transition:opacity 0.7s ease;"></div>
     </div>
     <div class="container hero-content">
       <span class="hero-eyebrow">Welcome to HWGT</span>
@@ -452,5 +453,30 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+  (function() {
+    var video = document.getElementById('heroVideo');
+    var overlay = document.getElementById('heroFadeOverlay');
+    if (!video || !overlay) return;
+    var fadeDur = 0.7;
+    var fading = false;
+    video.addEventListener('timeupdate', function() {
+      if (!video.duration || fading) return;
+      if (video.duration - video.currentTime < fadeDur) {
+        fading = true;
+        overlay.style.opacity = '1';
+      }
+    });
+    video.addEventListener('ended', function() {
+      video.currentTime = 0;
+      video.play();
+      setTimeout(function() {
+        overlay.style.opacity = '0';
+        fading = false;
+      }, 150);
+    });
+  })();
+  </script>
 </body>
 </html>
