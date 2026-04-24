@@ -3,134 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | However We Got Here</title>
-  <meta name="description" content="Get in touch with HWGT or join the podcast waitlist." />
+  <title>Book a Session | However We Got Here</title>
+  <meta name="description" content="Book a 1:1 sales coaching session with Mike Petroskey. 45 minutes, private, one-on-one. Or join office hours M–F 12–1pm MST." />
+  <link rel="icon" href="/images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/squirrel-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body class="page-body">
+<body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/rso.png" alt="" style="height:26px;width:auto;vertical-align:middle;margin-right:8px;">
-        HWGT
-        <span>However We Got Here</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/why/">Why?</a></li>
-        
-        <li><a href="/podcast/">Podcast</a></li>
-        <li><a href="/outdoors/">Outdoors</a></li>
-        <li><a href="/contact/" class="nav-cta">Book a Session</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/rso.png" alt="However We Got Here" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About Mike</a></li>
+      <li><a href="/podcast/">Podcast</a></li>
+      <li><a href="/outdoors/">Outdoors</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-gold nav-cta active">Book a 1:1 Session</a>
+  </div>
+</nav>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <p class="section-label">Get in Touch</p>
-      <h1>Contact Us</h1>
-      <div class="divider"></div>
-      <p>Have a question, or want to join the waitlist? We'd love to hear from you.</p>
-    </div>
-  </section>
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-eyebrow">Get in Touch</p>
+    <h1 class="serif">Book a session or<br>join office hours.</h1>
+    <p class="hero-sub">Two ways to work with Mike. Pick what fits where you are right now.</p>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <p class="section-label">Reach Out</p>
-          <h2>Let's Talk</h2>
-          <div class="divider"></div>
-          <p style="color:var(--cream-dark);">
-            We're not currently accepting new clients Ã¢ÂÂ but if you believe there's a fit, we'd love to hear about your work. Use the form to introduce yourself or ask a question, and check the box to request a reply.
-          </p>
-          <p class="mt-16" style="color:var(--cream-dark);">
-            If you're looking to request a podcast episode, head over to the <a href="/listener/" style="color:var(--gold);text-decoration:underline;">Listener page</a> instead.
-          </p>
-          <div class="mt-40">
-            <div style="display:flex;flex-direction:column;gap:20px;">
-              <div>
-                <p class="section-label" style="margin-bottom:4px;">Response Time</p>
-                <p style="color:var(--cream-dark);font-size:0.92rem;">We reply to all inquiries Ã¢ÂÂ just not always quickly. We appreciate your patience.</p>
-              </div>
-              <div>
-                <p class="section-label" style="margin-bottom:4px;">New Client Availability</p>
-                <p style="color:var(--cream-dark);font-size:0.92rem;">Currently closed. Join the waitlist and we'll reach out when an opening becomes available.</p>
-              </div>
+<section class="section section-mid">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="card mb-24">
+          <p class="pill">1:1 Session</p>
+          <h3>45 minutes. Private. Scheduled.</h3>
+          <p class="mb-24">Use the form below to book. Come with a deal, a call you want to break down, or a specific question. Mike will reach out to confirm a time.</p>
+          <p class="section-label">What to include in your message</p>
+          <div class="check-list mb-24">
+            <div>Your role (BDR, AE, other) and what you're selling</div>
+            <div>What you want to work on — the more specific, the better</div>
+            <div>If you want the session considered for the podcast, say so</div>
+          </div>
+          <form class="form-group" action="mailto:michaelpetroskey@gmail.com" method="GET">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
-          </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div>
+              <label for="message">What you want to work on</label>
+              <textarea id="message" name="body" rows="5" placeholder="I'm a BDR at a SaaS company. I have a deal with a VP of IT that went dark after a good discovery call. I want to talk through how to re-engage..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold">Send Message</button>
+          </form>
         </div>
-        <div>
-          <div class="card">
-            <form class="contact-form" action="#" method="POST">
-              <input type="hidden" name="_subject" value="New Contact Message Ã¢ÂÂ HWGT">
-              <input type="hidden" name="_captcha" value="false">
-              <div class="form-group">
-                <label for="contact-name">Name <span style="color:var(--gold);">*</span></label>
-                <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
-              </div>
-              <div class="form-group">
-                <label for="contact-email">Email <span style="color:var(--gold);">*</span></label>
-                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
-              </div>
-              <div class="form-group">
-                <label for="contact-message">Message</label>
-                <textarea id="contact-message" name="message" placeholder="Tell us about yourself or your questionÃ¢ÂÂ¦"></textarea>
-              </div>
-              <label class="checkbox-row">
-                <input type="checkbox" name="reply-requested" />
-                Check this box to request a reply to your inquiry
-              </label>
-              <button type="submit" class="btn btn-gold" style="width:100%;">Send Message</button>
-            </form>
+      </div>
+
+      <div>
+        <div class="card mb-24">
+          <p class="pill">Office Hours</p>
+          <h3>No appointment needed.</h3>
+          <p>Monday through Friday, 12–1pm MST. Live, streaming format. Drop in with a question or just listen. The link is below.</p>
+          <a href="#" class="btn btn-outline mt-24">Join Office Hours</a>
+          <p class="muted mt-16">12–1pm MST, Monday–Friday</p>
+        </div>
+
+        <div class="card">
+          <p class="section-label">What to Expect</p>
+          <div class="check-list">
+            <div>Mike will reply to 1:1 requests within a few days</div>
+            <div>Sessions run 45 minutes over video call</div>
+            <div>Bring something real — the more specific, the better the session</div>
+            <div>Nothing gets shared without your consent</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <h3>HWGT</h3>
-          <p>However We Got Here Ã¢ÂÂ business development consulting, client immersion, and outdoor experience retreats.</p>
-        </div>
-        <div class="footer-nav">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About & Services</a></li>
-            <li><a href="/why/">Why? (FAQ)</a></li>
-            
-            <li><a href="/podcast/">Podcast</a></li>
-            <li><a href="/outdoors/">Red Squirrel Outdoors</a></li>
-            <li><a href="/contact/">Book a Session</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>ÃÂ© 2025 HWGH/GT. All rights reserved.</span>
-        <span>Built with intention.</span>
-      </div>
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <img src="/images/rso.png" alt="However We Got Here" height="32" />
+      <p>Sales coaching for BDRs and AEs.</p>
     </div>
-  </footer>
+    <nav class="footer-nav">
+      <a href="/about/">About Mike</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/outdoors/">Outdoors</a>
+      <a href="/contact/">Book a 1:1 Session</a>
+    </nav>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; 2025 However We Got Here</p>
+  </div>
+</footer>
 
-  <script src="../js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
