@@ -4,435 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Squirrel Outdoors | However We Got Here</title>
-  <meta name="description" content="Invite-only client immersion experiences Ã¢ÂÂ fly fishing in Alaska, mountain biking, alpine hikes, culinary retreats, and more." />
+  <meta name="description" content="Red Squirrel Outdoors is Mike Petroskey's outdoors brand. Fly fishing, mountain biking, high-altitude hiking — the other half of the HWGT story." />
+  <link rel="icon" href="/images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    /* Ã¢ÂÂÃ¢ÂÂ Outdoors Hero Ã¢ÂÂÃ¢ÂÂ */
-    .outdoors-hero {
-      position: relative;
-      min-height: 72vh;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 72px;
-      overflow: hidden;
-    }
-    .outdoors-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&auto=format&fit=crop&q=75');
-      background-size: cover;
-      background-position: center 40%;
-      transform: scale(1.03);
-      transition: transform 8s ease;
-    }
-    .outdoors-hero-bg.loaded { transform: scale(1); }
-    .outdoors-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(37,42,44,0.35) 0%,
-        rgba(37,42,44,0.55) 55%,
-        rgba(37,42,44,0.88) 100%
-      );
-    }
-    .outdoors-hero .container { position: relative; z-index: 1; }
-    .outdoors-hero h1 {
-      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-      color: var(--cream);
-      line-height: 1.05;
-    }
-
-    /* Ã¢ÂÂÃ¢ÂÂ Attribute badges Ã¢ÂÂÃ¢ÂÂ */
-    .attr-badges {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-    .attr-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(37,42,44,0.7);
-      border: 1px solid rgba(181,117,74,0.35);
-      border-radius: 40px;
-      padding: 8px 16px;
-      font-size: 0.82rem;
-      color: var(--cream);
-      letter-spacing: 0.03em;
-      backdrop-filter: blur(8px);
-    }
-    .attr-badge-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* Ã¢ÂÂÃ¢ÂÂ Experience cards Ã¢ÂÂÃ¢ÂÂ */
-    .experience-list { display: flex; flex-direction: column; gap: 0; }
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 420px;
-      overflow: hidden;
-    }
-    .experience-item:nth-child(even) { direction: rtl; }
-    .experience-item:nth-child(even) > * { direction: ltr; }
-
-    .experience-image {
-      position: relative;
-      overflow: hidden;
-    }
-    .experience-image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-    .experience-item:hover .experience-image img { transform: scale(1.05); }
-
-    .experience-body {
-      background: var(--charcoal);
-      padding: 60px 56px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .experience-item:nth-child(odd) .experience-body {
-      background: var(--charcoal);
-    }
-    .experience-item:nth-child(even) .experience-body {
-      background: var(--charcoal-light);
-    }
-
-    .experience-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      line-height: 1;
-      color: rgba(181,117,74,0.18);
-      margin-bottom: -12px;
-      letter-spacing: -0.02em;
-    }
-    .experience-body h3 {
-      font-size: 1.7rem;
-      color: var(--cream);
-      margin-bottom: 16px;
-    }
-    .experience-body p {
-      color: var(--cream-dark);
-      font-size: 0.97rem;
-      line-height: 1.75;
-      max-width: 400px;
-    }
-    .experience-tag {
-      display: inline-block;
-      background: rgba(181,117,74,0.12);
-      border: 1px solid rgba(181,117,74,0.25);
-      color: var(--gold);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      width: fit-content;
-    }
-
-    /* Ã¢ÂÂÃ¢ÂÂ Philosophy card Ã¢ÂÂÃ¢ÂÂ */
-    .philosophy-card {
-      background: var(--charcoal-light);
-      border: 1px solid rgba(226,214,196,0.08);
-      border-radius: 12px;
-      padding: 52px 48px;
-    }
-
-    /* Ã¢ÂÂÃ¢ÂÂ Stats row Ã¢ÂÂÃ¢ÂÂ */
-    .outdoors-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(226,214,196,0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-top: 40px;
-    }
-    .outdoors-stat {
-      background: var(--charcoal);
-      padding: 32px 28px;
-      text-align: center;
-    }
-    .outdoors-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-    }
-    .outdoors-stat-label {
-      font-size: 0.78rem;
-      color: var(--cream-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 8px;
-      display: block;
-    }
-
-    /* Ã¢ÂÂÃ¢ÂÂ Responsive Ã¢ÂÂÃ¢ÂÂ */
-    @media (max-width: 840px) {
-      .experience-item { grid-template-columns: 1fr; min-height: auto; }
-      .experience-item:nth-child(even) { direction: ltr; }
-      .experience-image { aspect-ratio: 16/9; min-height: 260px; }
-      .experience-body { padding: 40px 28px; }
-      .experience-num { font-size: 3rem; }
-      .outdoors-stats { grid-template-columns: 1fr; }
-      .philosophy-card { padding: 36px 28px; }
-    }
-  </style>
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/squirrel-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body class="page-body">
+<body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/rso.png" alt="" style="height:26px;width:auto;vertical-align:middle;margin-right:8px;">
-        HWGT
-        <span>However We Got Here</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/why/">Why?</a></li>
-        <li><a href="/podcast/">Podcast</a></li>
-        <li><a href="/outdoors/" class="active">Outdoors</a></li>
-        <li><a href="/contact/" class="nav-cta">Book a Session</a></li>
-      </ul>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/rso.png" alt="However We Got Here" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About Mike</a></li>
+      <li><a href="/podcast/">Podcast</a></li>
+      <li><a href="/outdoors/" class="active">Outdoors</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-gold nav-cta">Book a 1:1 Session</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-eyebrow">Red Squirrel Outdoors</p>
+    <h1 class="serif">The other half<br>of the story.</h1>
+    <p class="hero-sub">Red Squirrel Outdoors is Mike's outdoors brand. Fly fishing, mountain biking, high-altitude hiking. It's part of the same identity as the coaching work — same work ethic, different terrain.</p>
+  </div>
+</section>
+
+<section class="section section-mid">
+  <div class="container">
+    <div class="page-body">
+      <h2 class="serif">Why it's part of the brand.</h2>
+      <p>The squirrel in the logo isn't decorative. Red Squirrel Outdoors has been a part of Mike's life as long as sales has. The work ethic that gets you up before light for a fly fishing run in Alaska is the same one that built a sales territory from scratch in rural Michigan. They're not separate things.</p>
+      <p>HWGT keeps Red Squirrel Outdoors in the brand intentionally — not because it's a program or a retreat offering, but because it's honest. Mike spends time in the field. That's part of who he is. The coaching and the outdoors come from the same place.</p>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Hero -->
-  <section class="outdoors-hero">
-    <div class="outdoors-hero-bg" id="outdoors-hero-bg"></div>
-    <div class="outdoors-hero-overlay"></div>
-    <div class="container">
-      <p class="section-label">Client Immersion</p>
-      <h1>Red Squirrel<br/>Outdoors</h1>
-      <div class="divider" style="margin:20px 0;"></div>
-      <p style="color:rgba(226,214,196,0.85);font-size:1.1rem;max-width:520px;line-height:1.7;">
-        Slow down. Reset the mind. Reconnect with the mission.
-      </p>
-      <div class="attr-badges">
-        <div class="attr-badge"><div class="attr-badge-dot"></div>Invite-Only</div>
-        <div class="attr-badge"><div class="attr-badge-dot"></div>Alaska Licensed Guide</div>
-        <div class="attr-badge"><div class="attr-badge-dot"></div>No Two the Same</div>
-        <div class="attr-badge"><div class="attr-badge-dot"></div>Built Into Client Work</div>
+<section class="section section-cream">
+  <div class="container">
+    <p class="section-label">What Red Squirrel Outdoors Covers</p>
+    <h2 class="serif">Where Mike spends his time.</h2>
+    <div class="grid-3 mt-40">
+      <div class="card">
+        <h3>Fly Fishing</h3>
+        <p>Mike is a licensed fly fishing guide in the State of Alaska. Quiet water, reading the river, patience — it teaches a different kind of focus than a sales floor does.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Philosophy -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="grid-2" style="align-items:center;gap:64px;">
-        <div>
-          <p class="section-label">The Philosophy</p>
-          <h2>The Best Thinking Rarely Happens Under Fluorescent Lights</h2>
-          <div class="divider"></div>
-          <p style="color:var(--cream-dark);">
-            At However We Got Here, we believe some of the most meaningful breakthroughs Ã¢ÂÂ the kind that reframe challenges, uncover new opportunities, or build lasting trust Ã¢ÂÂ come when we step outside the usual environment.
-          </p>
-          <p class="mt-16" style="color:var(--cream-dark);">
-            That's why we offer curated Client Immersion Experiences, affectionately known as Red Squirrel Outdoors, as an intentional part of how we deepen relationships and move work forward.
-          </p>
-        </div>
-        <div>
-          <div class="outdoors-stats">
-            <div class="outdoors-stat">
-              <span class="outdoors-stat-num">100%</span>
-              <span class="outdoors-stat-label">Invite-Only</span>
-            </div>
-            <div class="outdoors-stat">
-              <span class="outdoors-stat-num">AK</span>
-              <span class="outdoors-stat-label">Licensed Guide</span>
-            </div>
-            <div class="outdoors-stat">
-              <span class="outdoors-stat-num">Ã¢ÂÂ</span>
-              <span class="outdoors-stat-label">Tailored to You</span>
-            </div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Mountain Biking</h3>
+        <p>Trail riding across varying terrain and conditions. The kind of activity where the only thing that matters is what's directly in front of you.</p>
+      </div>
+      <div class="card">
+        <h3>High-Altitude Hiking</h3>
+        <p>Multi-day routes in the backcountry. Long days, real logistics, no shortcuts. The mountain doesn't care about your quota.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Experiences Ã¢ÂÂ alternating image/text -->
-  <section style="background:var(--charcoal);">
-    <div style="max-width:1400px;margin:0 auto;">
-      <div style="padding:64px 40px 24px;text-align:center;">
-        <p class="section-label center">What We Do</p>
-        <h2 class="center">Experiences at Red Squirrel Outdoors</h2>
-        <div class="divider center" style="margin:20px auto;"></div>
-      </div>
+<section class="section section-mid">
+  <div class="container center">
+    <p class="section-label">The Coaching Side</p>
+    <h2 class="serif">That's what this site is mostly about.</h2>
+    <p class="wide-p mb-40">If you found the outdoors page first and you're a BDR or AE looking for coaching — that's the main thing. Two formats: scheduled 1:1 sessions and daily office hours. Both open.</p>
+    <div class="hero-actions">
+      <a href="/contact/" class="btn btn-gold">Book a 1:1 Session</a>
+      <a href="/" class="btn btn-outline">Back to Home</a>
     </div>
+  </div>
+</section>
 
-    <div class="experience-list">
-
-      <!-- 1. Fly Fishing -->
-      <div class="experience-item">
-        <div class="experience-image">
-          <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=75"
-            alt="Fly fishing on a clear mountain river in Alaska"
-            loading="lazy"
-          />
-        </div>
-        <div class="experience-body">
-          <div class="experience-num">01</div>
-          <div class="experience-tag">Fly Fishing</div>
-          <h3>Fly Fishing Retreats</h3>
-          <p>Quiet water, intentional conversation, and the rhythm of the cast. We are a licensed fly fishing guide in the State of Alaska Ã¢ÂÂ and depending on the season, we fish some of the most remarkable waters in the world.</p>
-        </div>
-      </div>
-
-      <!-- 2. Mountain Biking -->
-      <div class="experience-item">
-        <div class="experience-image">
-          <img
-            src="https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=900&auto=format&fit=crop&q=75"
-            alt="Mountain biking on rugged singletrack trail"
-            loading="lazy"
-          />
-        </div>
-        <div class="experience-body">
-          <div class="experience-num">02</div>
-          <div class="experience-tag">Mountain Biking</div>
-          <h3>Mountain Biking</h3>
-          <p>For clients who crave movement and challenge, we explore curated trails that match skill levels and desired intensity. These rides spark conversation, test limits, and shake loose stagnant thinking.</p>
-        </div>
-      </div>
-
-      <!-- 3. Hiking -->
-      <div class="experience-item">
-        <div class="experience-image">
-          <img
-            src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&auto=format&fit=crop&q=75"
-            alt="High-altitude hiking on a mountain ridge trail"
-            loading="lazy"
-          />
-        </div>
-        <div class="experience-body">
-          <div class="experience-num">03</div>
-          <div class="experience-tag">High-Altitude Hiking</div>
-          <h3>High-Altitude Hiking</h3>
-          <p>Some of our best strategic sessions take place one step at a time. From alpine lakes to forested paths, hikes create a natural space to ask better questions Ã¢ÂÂ and hear better answers.</p>
-        </div>
-      </div>
-
-      <!-- 4. Culinary -->
-      <div class="experience-item">
-        <div class="experience-image">
-          <img
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&auto=format&fit=crop&q=75"
-            alt="Farm-to-table culinary retreat dining experience"
-            loading="lazy"
-          />
-        </div>
-        <div class="experience-body">
-          <div class="experience-num">04</div>
-          <div class="experience-tag">Culinary Retreats</div>
-          <h3>Culinary Retreats</h3>
-          <p>Relationships often deepen over food. We've partnered with local chefs and foragers to host intimate dining experiences, cooking sessions, and farm-to-table tastings that complement the work we're doing together.</p>
-        </div>
-      </div>
-
-      <!-- 5. Meditation -->
-      <div class="experience-item">
-        <div class="experience-image">
-          <img
-            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&auto=format&fit=crop&q=75"
-            alt="Meditation and mindfulness in a serene natural setting"
-            loading="lazy"
-          />
-        </div>
-        <div class="experience-body">
-          <div class="experience-num">05</div>
-          <div class="experience-tag">Mindfulness</div>
-          <h3>Meditation &amp; Mindfulness</h3>
-          <p>Stillness matters. We offer guided sessions and quiet environments for clients looking to reset and return to the work with a clear head and renewed energy.</p>
-        </div>
-      </div>
-
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <img src="/images/rso.png" alt="However We Got Here" height="32" />
+      <p>Sales coaching for BDRs and AEs.</p>
     </div>
-  </section>
+    <nav class="footer-nav">
+      <a href="/about/">About Mike</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/outdoors/">Outdoors</a>
+      <a href="/contact/">Book a 1:1 Session</a>
+    </nav>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; 2025 However We Got Here</p>
+  </div>
+</footer>
 
-  <!-- Disclosure -->
-  <section class="section section-dark">
-    <div class="container" style="max-width:720px;">
-      <div class="card" style="border-color:rgba(181,117,74,0.2);padding:44px 40px;">
-        <h3 class="gold mb-16">Important Disclosure</h3>
-        <p style="color:var(--cream-dark);font-size:0.95rem;line-height:1.8;">
-          These experiences are not the core of what we do Ã¢ÂÂ they are an intentional complement to the consulting relationship. They are designed to foster clarity, collaboration, and trust, and are built into client engagements based on mutual fit and the goals of the partnership. These are invite-only and not available for standalone purchase.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section-sm section-mid">
-    <div class="container center">
-      <p class="section-label">Interested?</p>
-      <h2>Start With the Relationship</h2>
-      <div class="divider center"></div>
-      <p class="mt-16" style="color:var(--cream-dark);max-width:480px;margin-inline:auto;">
-        Red Squirrel Outdoors experiences are built into client engagements Ã¢ÂÂ they're not booked separately. Start by getting in touch.
-      </p>
-      <a href="/contact/" class="btn btn-gold mt-40">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <h3>HWGT</h3>
-          <p>However We Got Here Ã¢ÂÂ business development consulting, client immersion, and outdoor experience retreats.</p>
-        </div>
-        <div class="footer-nav">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About &amp; Services</a></li>
-            <li><a href="/why/">Why? (FAQ)</a></li>
-            <li><a href="/podcast/">Podcast</a></li>
-            <li><a href="/outdoors/">Red Squirrel Outdoors</a></li>
-            <li><a href="/contact/">Book a Session</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>ÃÂ© 2025 HWGH/GT. All rights reserved.</span>
-        <span>Built with intention.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../js/main.js"></script>
-  <script>
-    // Ken Burns effect on hero bg
-    const bg = document.getElementById('outdoors-hero-bg');
-    if (bg) { requestAnimationFrame(() => bg.classList.add('loaded')); }
-  </script>
+<script src="/js/main.js"></script>
 </body>
 </html>
