@@ -3,309 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Podcast | However We Got Here</title>
-  <meta name="description" content="HWGT is a demand-driven, by-request-only podcast for clients. Meet our notable guests and request an episode." />
+  <title>Podcast | However We Got Here</title>
+  <meta name="description" content="The HWGT podcast: real sales deals broken down in real time. Mike Petroskey coaches reps live on stream and in conversation." />
+  <link rel="icon" href="/images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    /* Ã¢ÂÂÃ¢ÂÂ Podcast page styles Ã¢ÂÂÃ¢ÂÂ */
-    .podcast-hero {
-      background: var(--charcoal);
-      padding: 120px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .podcast-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(181,117,74,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .podcast-hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
-
-    /* Mic icon accent */
-    .mic-accent {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(181,117,74,0.15);
-      border: 1px solid rgba(181,117,74,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin: 0 auto 28px;
-    }
-
-    /* Guests grid */
-    .guests-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 24px;
-    }
-    .guest-card {
-      background: var(--charcoal-light);
-      border: 1px solid rgba(226,214,196,0.08);
-      border-radius: 12px;
-      padding: 36px 32px;
-      position: relative;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .guest-card:hover {
-      border-color: rgba(181,117,74,0.25);
-      transform: translateY(-3px);
-    }
-    .guest-card::before {
-      content: '"';
-      position: absolute;
-      top: 20px;
-      left: 28px;
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: rgba(181,117,74,0.2);
-      pointer-events: none;
-    }
-    .guest-card blockquote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.18rem;
-      color: var(--cream);
-      line-height: 1.65;
-      margin: 0 0 20px;
-      padding-top: 24px;
-    }
-    .guest-card cite {
-      font-style: normal;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--gold);
-      display: block;
-    }
-    .guest-card .guest-title {
-      font-size: 0.82rem;
-      color: var(--cream-dark);
-      margin-top: 4px;
-      letter-spacing: 0.02em;
-    }
-
-    /* Request form split */
-    .podcast-request {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .podcast-request { grid-template-columns: 1fr; gap: 40px; }
-      .guests-grid { grid-template-columns: 1fr; }
-    }
-
-    /* Stat row */
-    .stat-row {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 48px;
-    }
-    .stat-item { text-align: left; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.82rem;
-      color: var(--cream-dark);
-      margin-top: 4px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/squirrel-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body class="page-body">
+<body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/rso.png" alt="" style="height:26px;width:auto;vertical-align:middle;margin-right:8px;">
-        HWGT
-        <span>However We Got Here</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/why/">Why?</a></li>
-        <li><a href="/podcast/" class="active">Podcast</a></li>
-        <li><a href="/outdoors/">Outdoors</a></li>
-        <li><a href="/contact/" class="nav-cta">Book a Session</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/rso.png" alt="However We Got Here" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About Mike</a></li>
+      <li><a href="/podcast/" class="active">Podcast</a></li>
+      <li><a href="/outdoors/">Outdoors</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-gold nav-cta">Book a 1:1 Session</a>
+  </div>
+</nav>
 
-  <!-- Hero -->
-  <section class="podcast-hero">
-    <div class="container">
-      <div class="mic-accent">Ã°ÂÂÂÃ¯Â¸Â</div>
-      <p class="section-label">Client Podcast</p>
-      <h1>However We Got Here</h1>
-      <div class="divider" style="margin:20px auto;"></div>
-      <p style="color:var(--cream-dark);max-width:560px;margin:0 auto;font-size:1.08rem;line-height:1.7;">
-        A demand-driven podcast for the discerning few. Not broadcast to the world Ã¢ÂÂ built for clients, delivered by request.
-      </p>
-    </div>
-  </section>
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-eyebrow">However We Got Here</p>
+    <h1 class="serif">Real deals. Real calls.<br>Broken down live.</h1>
+    <p class="hero-sub">The HWGT podcast comes out of the office hours and 1:1 work. Real reps bring real situations. We work through them on the record — deal strategy, call breakdowns, objections, career decisions. No scripts, no role-plays.</p>
+  </div>
+</section>
 
-  <!-- How It Works -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="podcast-request">
-        <div>
-          <p class="section-label">By Request Only</p>
-          <h2>A Different Kind of Podcast</h2>
-          <div class="divider"></div>
-          <p style="color:var(--cream-dark);">
-            HWGT is a demand-driven podcast. We've come up with a model to deliver content exclusively to the discerning listener Ã¢ÂÂ with a by-request-only approach.
-          </p>
-          <p class="mt-16" style="color:var(--cream-dark);">
-            Rather than broadcasting to the world and chasing downloads, we focus on quality conversations with remarkable guests that are directly valuable to our clients.
-          </p>
-          <p class="mt-16" style="color:var(--cream-dark);">
-            To request an episode, use the form. We'll notify you when it's available.
-          </p>
-          <div class="stat-row">
-            <div class="stat-item">
-              <div class="stat-num">100%</div>
-              <div class="stat-label">Client-Driven</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">0</div>
-              <div class="stat-label">Ads. Ever.</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">Ã¢ÂÂ</div>
-              <div class="stat-label">Signal-to-Noise</div>
-            </div>
+<section class="section section-mid">
+  <div class="container">
+    <div class="grid-2">
+      <div class="page-body">
+        <h2 class="serif">What you'll hear.</h2>
+        <p>Episodes come directly from coaching sessions and office hours. A BDR working a cold outreach sequence that isn't landing. An AE stuck in a three-month procurement loop. A rep deciding whether to take an offer or stay put. We work through it out loud.</p>
+        <p>The format is coaching, not commentary. You're not listening to someone explain what reps should do in general. You're watching it happen with a specific deal, a specific person, a specific problem.</p>
+        <p>Some episodes are call breakdowns — the rep shares a recording and we go line by line. Some are strategy sessions on a deal the rep is actively working. Some are career conversations about a decision in front of someone right now.</p>
+
+        <h2 class="serif mt-40">How to get on.</h2>
+        <p>Two ways. If you want to be coached live during office hours, show up Monday through Friday between 12 and 1pm MST. Bring your situation. If you want a private session that might become an episode, book a 1:1 and let me know when you reach out.</p>
+        <p>Not every session becomes an episode. If you want to keep it private, say so — that's what the 1:1 format is for.</p>
+      </div>
+
+      <div>
+        <div class="card mb-24">
+          <p class="section-label">Episode Types</p>
+          <div class="check-list">
+            <div><strong>Call Breakdown</strong> — Rep shares a recording. We go line by line.</div>
+            <div><strong>Deal Review</strong> — Active deal, full strategy session</div>
+            <div><strong>Career Decision</strong> — Real choice, real stakes, talked through live</div>
+            <div><strong>Office Hours Clip</strong> — A great question from the live stream</div>
           </div>
         </div>
-        <div>
-          <div class="card">
-            <p class="section-label">Request an Episode</p>
-            <h3 class="mb-24">Want an episode?</h3>
-            <form class="contact-form" action="#" method="POST">
-              <input type="hidden" name="_subject" value="New Podcast Guest Inquiry Ã¢ÂÂ HWGT">
-              <input type="hidden" name="_captcha" value="false">
-              <div class="form-group">
-                <label for="listener-name">Name</label>
-                <input type="text" id="listener-name" name="name" placeholder="Your name" />
-              </div>
-              <div class="form-group">
-                <label for="listener-email">Email <span style="color:var(--gold);">*</span></label>
-                <input type="email" id="listener-email" name="email" placeholder="your@email.com" required />
-              </div>
-              <div class="form-group">
-                <label for="episode-request">Episode Request or Topic</label>
-                <textarea id="episode-request" name="request" placeholder="What topic or guest would you like to hear about?"></textarea>
-              </div>
-              <button type="submit" class="btn btn-gold" style="width:100%;">Send Request</button>
-            </form>
+
+        <div class="card mb-24">
+          <p class="section-label">Topics Covered</p>
+          <div class="check-list">
+            <div>Cold outreach — what's working and what isn't</div>
+            <div>Discovery call structure and question sequencing</div>
+            <div>Multi-threading a complex deal</div>
+            <div>Late-stage objections and negotiation</div>
+            <div>Making the BDR to AE jump</div>
+            <div>Territory planning and prioritization</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="section-label">Get Involved</p>
+          <p class="mb-16">Want to be coached on the podcast or join office hours live?</p>
+          <div class="hero-actions">
+            <a href="/contact/" class="btn btn-gold">Book a 1:1 Session</a>
+            <a href="#" class="btn btn-outline">Office Hours</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Notable Guests -->
-  <section class="section section-mid">
-    <div class="container">
-      <p class="section-label center">Who's Been On</p>
-      <h2 class="center mb-16">Notable Guests</h2>
-      <div class="divider center"></div>
-      <p class="center mt-16" style="color:var(--cream-dark);max-width:540px;margin-inline:auto;">
-        A selection of the remarkable people who've joined us on HWGT Ã¢ÂÂ from legislators to Nobel-adjacent scholars to world-class athletes.
-      </p>
+<section class="section section-cream">
+  <div class="container center">
+    <p class="section-label">Listener?</p>
+    <h2 class="serif">There's a page for you.</h2>
+    <p class="wide-p mb-40">If you found HWGT through the podcast and want to understand what's available — office hours, 1:1 sessions, how to submit a deal for review — the listener page has the details.</p>
+    <a href="/listener/" class="btn btn-outline">Listener Info</a>
+  </div>
+</section>
 
-      <div class="guests-grid mt-40">
-
-        <div class="guest-card">
-          <blockquote>"Thanks for having me on."</blockquote>
-          <cite>Congressman Peter Meijer</cite>
-          <p class="guest-title">United States Congressman, (R-MI)</p>
-        </div>
-
-        <div class="guest-card">
-          <blockquote>"It's been a pleasure... thank you so much."</blockquote>
-          <cite>Weird Paul</cite>
-          <p class="guest-title">YouTube Star &amp; World-Famous Musician</p>
-        </div>
-
-        <div class="guest-card">
-          <blockquote>"Thanks man, it's great to be here."</blockquote>
-          <cite>Drew Gregory</cite>
-          <p class="guest-title">World-Renowned Kayak Bass Angler</p>
-        </div>
-
-        <div class="guest-card">
-          <blockquote>"My pleasure."</blockquote>
-          <cite>Dan Ariely</cite>
-          <p class="guest-title">NYT Bestseller &amp; Professor of Behavioral Economics, Duke University</p>
-        </div>
-
-      </div>
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <img src="/images/rso.png" alt="However We Got Here" height="32" />
+      <p>Sales coaching for BDRs and AEs.</p>
     </div>
-  </section>
+    <nav class="footer-nav">
+      <a href="/about/">About Mike</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/outdoors/">Outdoors</a>
+      <a href="/contact/">Book a 1:1 Session</a>
+    </nav>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; 2025 However We Got Here</p>
+  </div>
+</footer>
 
-  <!-- Footer CTA -->
-  <section class="section-sm section-dark">
-    <div class="container center">
-      <span class="pill">Client-Only Access</span>
-      <h2 class="mt-24">Ready to Request an Episode?</h2>
-      <div class="divider center"></div>
-      <p class="mt-16" style="color:var(--cream-dark);margin-inline:auto;max-width:480px;">
-        Use the form above or reach out directly. Existing clients get priority access.
-      </p>
-      <a href="/contact/" class="btn btn-gold mt-40">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <h3>HWGT</h3>
-          <p>However We Got Here Ã¢ÂÂ business development consulting, client immersion, and outdoor experience retreats.</p>
-        </div>
-        <div class="footer-nav">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About &amp; Services</a></li>
-            <li><a href="/why/">Why? (FAQ)</a></li>
-            <li><a href="/podcast/">Podcast</a></li>
-            <li><a href="/outdoors/">Red Squirrel Outdoors</a></li>
-            <li><a href="/contact/">Book a Session</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>ÃÂ© 2025 HWGH/GT. All rights reserved.</span>
-        <span>Built with intention.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
