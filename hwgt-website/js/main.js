@@ -1,114 +1,84 @@
-/* ============================================================
-   HWGT — However We Got Here | Main JS
-   ============================================================ */
+/* HWGT — main.js — 2026 */
+(function () {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
+  /* ── Nav: add .scrolled class on scroll ───────────────────── */
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    const checkScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    };
+    checkScroll();
+    window.addEventListener('scroll', checkScroll, { passive: true });
+  }
 
-  /* --- Mobile Nav Toggle --- */
+  /* ── Mobile nav toggle ────────────────────────────────────── */
   const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (toggle && navLinks) {
+  const links  = document.querySelector('.nav-links');
+  if (toggle && links) {
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
+      links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', links.classList.contains('open'));
     });
     // Close on link click
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => links.classList.remove('open'));
     });
   }
 
-  /* --- Active Nav Link --- */
-  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    const href = a.getAttribute('href').replace(/\/$/, '') || '/';
-    if (href === currentPath || (currentPath !== '/' && currentPath.startsWith(href) && href !== '/')) {
-      a.classList.add('active');
-    }
-  });
-
-  /* --- FAQ Accordion --- */
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-answer');
-      const isOpen = item.classList.contains('open');
-
-      // Close all
-      document.querySelectorAll('.faq-item.open').forEach(openItem => {
-        openItem.classList.remove('open');
-        openItem.querySelector('.faq-answer').style.maxHeight = '0';
-      });
-
-      // Open clicked (if it was closed)
-      if (!isOpen) {
-        item.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-      }
-    });
-  });
-
-  /* --- Contact Form (formsubmit.co) --- */
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-
-      const data = Object.fromEntries(new FormData(form));
-
-      fetch('https://formsubmit.co/ajax/howeverwegothere@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(r => r.json())
-      .then(res => {
-        if (res.success === 'true' || res.success === true) {
-          btn.textContent = 'Message Sent ✓';
-          btn.style.background = 'var(--green-accent)';
-          btn.style.color = 'var(--cream)';
-          form.reset();
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
-            btn.style.background = '';
-            btn.style.color = '';
-          }, 4000);
+  /* ── Hero video: pause when scrolled out of view ─────────── */
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          heroVideo.play().catch(() => {});
         } else {
-          btn.textContent = 'Try Again';
-          btn.disabled = false;
+          heroVideo.pause();
         }
-      })
-      .catch(() => {
-        btn.textContent = 'Try Again';
-        btn.disabled = false;
-      });
-    });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(heroVideo);
+
+    // Subtle parallax on the hero video
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroSection = heroVideo.closest('.hero');
+      if (heroSection && scrollY < window.innerHeight * 1.5) {
+        heroVideo.style.transform = `translateY(${scrollY * 0.25}px)`;
+      }
+    }, { passive: true });
   }
 
-  /* --- Subtle scroll animation --- */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+  /* ── Scroll-in animations (fade-up) ──────────────────────── */
+  const fadeEls = document.querySelectorAll('.card, .page-body h2, .page-body p, .section-label, .wide-p');
 
-  document.querySelectorAll('.card, .quote-card, .activity-card, .step').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
+  if ('IntersectionObserver' in window && fadeEls.length) {
+    fadeEls.forEach(el => el.classList.add('fade-up'));
 
-});
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    fadeEls.forEach(el => io.observe(el));
+  }
+
+  /* ── Hero fade overlay on scroll (optional cinematic fade) ── */
+  const fadeOverlay = document.getElementById('heroFadeOverlay');
+  if (fadeOverlay) {
+    window.addEventListener('scroll', () => {
+      const ratio = Math.min(window.scrollY / (window.innerHeight * 0.6), 1);
+      fadeOverlay.style.opacity = (ratio * 0.7).toString();
+    }, { passive: true });
+  }
+
+})();
