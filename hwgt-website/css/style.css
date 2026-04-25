@@ -493,6 +493,50 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   padding-left: 22px;
 }
 
+/* ── LOGO WALL ──────────────────────────────────────────────── */
+.logo-wall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream-mid);
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  line-height: 1.3;
+  min-height: 72px;
+}
+
+.logo-item:hover {
+  color: var(--cream);
+  background: var(--gold-dim);
+  border-color: var(--border-gold);
+}
+
+.logo-sub {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
 /* ── PAGE BODY ──────────────────────────────────────────────── */
 .page-body h2.serif {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
@@ -625,7 +669,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .fade-up.visible {
-  opacity: 1;
+  opcity: 1;
   transform: translateY(0);
 }
 
