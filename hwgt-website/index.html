@@ -30,15 +30,25 @@
 </nav>
 
 <section class="hero">
+  <div class="hero-video-wrap">
+    <video id="heroVideo" autoplay muted playsinline>
+      <source src="/videos/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div id="heroFadeOverlay" style="position:absolute;inset:0;background:#1E2428;opacity:0;transition:opacity 0.7s ease;pointer-events:none;z-index:1;"></div>
+  </div>
   <div class="container">
-    <p class="hero-eyebrow">However We Got Here</p>
-    <h1 class="serif">You carry a number.<br>You deserve a coach.</h1>
-    <p class="hero-sub">Sales coaching for BDRs and AEs from Mike Petroskey — fifteen years from demand gen rep to CRO. Two formats. Both open now.</p>
-    <div class="hero-actions">
-      <a href="/contact/" class="btn btn-gold">Book a 1:1 Session</a>
-      <a href="#" class="btn btn-outline">Join Office Hours</a>
+    <div class="hero-content">
+      <p class="hero-eyebrow">However We Got Here</p>
+      <h1 class="serif">You carry a number.<br>You deserve a coach.</h1>
+      <p class="hero-sub">Sales coaching for BDRs and AEs from Mike Petroskey. 1:1 sessions and daily office hours. Bring a real deal, a real call, or a real problem.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn btn-gold">Book a 1:1 Session</a>
+        <a href="#" class="btn btn-outline">Join Office Hours</a>
+      </div>
     </div>
   </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
 </section>
 
 <section class="section section-mid">
@@ -108,7 +118,7 @@
         </div>
         <div class="card">
           <p class="section-label">Why This Exists</p>
-          <p class="mb-16">Mike didn't have a coach when he was a BDR making cold calls. Nobody to call when a deal went sideways. This is the resource he wished had existed.</p>
+          <p class="mb-16">Mike didn't have a coach when he was a BDR cold-calling into accounts that had never heard of Compellent. Nobody to call when a deal went sideways. This is the resource he wished had existed.</p>
           <a href="/why/" class="btn btn-outline">Why This Exists</a>
         </div>
       </div>
