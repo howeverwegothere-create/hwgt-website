@@ -192,7 +192,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   align-items: center;
   margin-right: 40px;
 }
-.nav-logo img { height: 34px; }
+.nav-logo img { height: 34px; width: auto; flex-shrink: 0; }
 
 .nav-links {
   display: flex;
@@ -669,7 +669,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .fade-up.visible {
-  opcity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
