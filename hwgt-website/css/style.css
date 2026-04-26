@@ -1,8 +1,8 @@
 /* ============================================================
-   HWGT — style.css — 2026 redesign
+   HWGT â style.css â 2026 redesign
    ============================================================ */
 
-/* ── Custom Properties ─────────────────────────────────────── */
+/* ââ Custom Properties âââââââââââââââââââââââââââââââââââââââ */
 :root {
   --bg:            #0D1117;
   --bg-mid:        #131920;
@@ -27,7 +27,7 @@
   --transition:    0.22s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ── Reset ──────────────────────────────────────────────────── */
+/* ââ Reset ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -42,7 +42,7 @@ body {
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: var(--gold); }
 
-/* ── Typography ─────────────────────────────────────────────── */
+/* ââ Typography âââââââââââââââââââââââââââââââââââââââââââââââ */
 h1, h2, h3, h4 { color: var(--cream); font-weight: 700; line-height: 1.15; }
 
 .serif,
@@ -55,14 +55,14 @@ h2 { font-size: clamp(1.9rem, 3.8vw, 3rem); letter-spacing: -0.025em; }
 h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.4; }
 p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
 
-/* ── Container ──────────────────────────────────────────────── */
+/* ââ Container ââââââââââââââââââââââââââââââââââââââââââââââââ */
 .container {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 28px;
 }
 
-/* ── Utilities ──────────────────────────────────────────────── */
+/* ââ Utilities ââââââââââââââââââââââââââââââââââââââââââââââââ */
 .mt-24 { margin-top: 24px; }
 .mt-40 { margin-top: 40px; }
 .mb-16 { margin-bottom: 16px; }
@@ -80,7 +80,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   color: var(--cream-dim);
 }
 
-/* ── Section Label ──────────────────────────────────────────── */
+/* ââ Section Label ââââââââââââââââââââââââââââââââââââââââââââ */
 .section-label {
   display: inline-flex;
   align-items: center;
@@ -101,7 +101,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   flex-shrink: 0;
 }
 
-/* ── Pill ───────────────────────────────────────────────────── */
+/* ââ Pill âââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .pill {
   display: inline-block;
   font-size: 0.68rem;
@@ -116,7 +116,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   margin-bottom: 18px;
 }
 
-/* ── Buttons ────────────────────────────────────────────────── */
+/* ââ Buttons ââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -158,13 +158,16 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   transform: translateY(-2px);
 }
 
-/* ── NAV ────────────────────────────────────────────────────── */
+/* ââ NAV ââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 200;
+  background: rgba(13,17,23,0.82);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
   transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition), box-shadow var(--transition);
   border-bottom: 1px solid transparent;
 }
@@ -235,7 +238,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
 
 .nav-cta { margin-left: auto; }
 
-/* ── HERO ───────────────────────────────────────────────────── */
+/* ââ HERO âââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -366,7 +369,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   100% { opacity: 0.2; transform: scaleY(1); }
 }
 
-/* ── PAGE HERO (inner pages) ────────────────────────────────── */
+/* ââ PAGE HERO (inner pages) ââââââââââââââââââââââââââââââââââ */
 .page-hero {
   padding: 148px 0 88px;
   background: var(--bg);
@@ -394,7 +397,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   line-height: 1.8;
 }
 
-/* ── SECTIONS ───────────────────────────────────────────────── */
+/* ââ SECTIONS âââââââââââââââââââââââââââââââââââââââââââââââââ */
 .section {
   padding: 100px 0;
   position: relative;
@@ -414,7 +417,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   position: relative;
 }
 
-/* ── GRIDS ──────────────────────────────────────────────────── */
+/* ââ GRIDS ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -428,7 +431,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   gap: 22px;
 }
 
-/* ── CARDS ──────────────────────────────────────────────────── */
+/* ââ CARDS ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .card {
   background: rgba(26,33,48,0.55);
   border: 1px solid var(--border);
@@ -469,7 +472,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   color: var(--cream-mid);
 }
 
-/* ── CHECK LIST ─────────────────────────────────────────────── */
+/* ââ CHECK LIST âââââââââââââââââââââââââââââââââââââââââââââââ */
 .check-list {
   display: flex;
   flex-direction: column;
@@ -493,7 +496,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   padding-left: 22px;
 }
 
-/* ── LOGO WALL ──────────────────────────────────────────────── */
+/* ââ LOGO WALL ââââââââââââââââââââââââââââââââââââââââââââââââ */
 .logo-wall {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -537,7 +540,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   margin-top: 3px;
 }
 
-/* ── PAGE BODY ──────────────────────────────────────────────── */
+/* ââ PAGE BODY ââââââââââââââââââââââââââââââââââââââââââââââââ */
 .page-body h2.serif {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   margin-bottom: 14px;
@@ -554,7 +557,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   color: var(--cream-mid);
 }
 
-/* ── ABOUT PHOTO ────────────────────────────────────────────── */
+/* ââ ABOUT PHOTO ââââââââââââââââââââââââââââââââââââââââââââââ */
 .about-photo-wrap {
   position: relative;
   border-radius: var(--radius-md);
@@ -599,7 +602,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   text-transform: uppercase;
 }
 
-/* ── FOOTER ─────────────────────────────────────────────────── */
+/* ââ FOOTER âââââââââââââââââââââââââââââââââââââââââââââââââââ */
 .footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -662,7 +665,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   color: var(--muted);
 }
 
-/* ── SCROLL ANIMATIONS ──────────────────────────────────────── */
+/* ââ SCROLL ANIMATIONS ââââââââââââââââââââââââââââââââââââââââ */
 .fade-up {
   opacity: 0;
   transform: translateY(28px);
@@ -678,7 +681,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
 .grid-3 .fade-up:nth-child(2) { transition-delay: 0.1s; }
 .grid-3 .fade-up:nth-child(3) { transition-delay: 0.2s; }
 
-/* ── RESPONSIVE ─────────────────────────────────────────────── */
+/* ââ RESPONSIVE âââââââââââââââââââââââââââââââââââââââââââââââ */
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; gap: 28px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
@@ -717,7 +720,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--cream-mid); }
   .container { padding: 0 20px; }
 }
 
-/* ── FORM STYLES (contact page) ─────────────────────────────── */
+/* ââ FORM STYLES (contact page) âââââââââââââââââââââââââââââââ */
 input, textarea, select {
   width: 100%;
   padding: 13px 16px;
