@@ -3,162 +3,329 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sales Coaching for BDRs & AEs | However We Got Here</title>
+  <title>However We Got Here | Sales Coaching for BDRs and AEs</title>
   <meta name="description" content="Sales coaching for BDRs and AEs from Mike Petroskey. 1:1 sessions and daily office hours. Bring a real deal, a real call, or a real problem." />
-  <link rel="icon" href="/images/favicon.png" />
+  <link rel="icon" type="image/png" href="images/rso.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    :root{
+      --bg:#0d1a0e;
+      --bg-alt:#111f12;
+      --bg-card:#182b1a;
+      --bg-logo:#ffffff;
+      --text:#e8ede8;
+      --muted:#8fa892;
+      --accent:#7ab87a;
+      --accent-dark:#0d1a0e;
+      --border:rgba(255,255,255,0.07);
+      --nav-h:60px;
+      --max-w:920px;
+      --pad:clamp(18px,5vw,48px);
+      --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --serif:'Playfair Display',Georgia,serif;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    p{color:var(--muted);margin-bottom:1em}
+    p:last-child{margin-bottom:0}
+    h1,h2,h3{line-height:1.2;color:var(--text)}
+    h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700}
+    h2{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:18px}
+    h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+    .label{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+    section{padding:80px 0}
+    .sec-alt{background:var(--bg-alt)}
+    .sec-header{margin-bottom:44px}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(13,26,14,0.97);backdrop-filter:blur(12px) saturate(1.4);-webkit-backdrop-filter:blur(12px) saturate(1.4);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center}
+    .nav-inner{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.9rem}
+    .nav-logo img{height:34px;width:auto;flex-shrink:0}
+    .nav-links{display:none;list-style:none;gap:28px}
+    .nav-links a{font-size:0.85rem;font-weight:500;color:var(--muted);transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    @media(min-width:640px){.nav-links{display:flex}.nav-burger{display:none}}
+    .nav-burger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px}
+    .nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:0.3s}
+    .mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);z-index:99;padding:12px var(--pad) 20px}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--muted);border-bottom:1px solid var(--border)}
+    .mobile-menu a:last-child{border-bottom:none}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 65% 50%,rgba(80,140,80,0.07) 0%,transparent 60%);pointer-events:none}
+    .hero-content{position:relative;z-index:1;padding-top:calc(var(--nav-h) + 48px);padding-bottom:80px}
+    .hero h1{max-width:660px;margin-bottom:22px}
+    .hero-sub{font-size:clamp(1rem,2vw,1.1rem);color:var(--muted);max-width:500px;margin-bottom:36px}
+    .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 26px;border-radius:6px;font-size:0.9375rem;font-weight:600;border:1.5px solid transparent;transition:all 0.2s;cursor:pointer}
+    .btn-primary{background:var(--accent);color:var(--accent-dark);border-color:var(--accent)}
+    .btn-primary:hover{background:#8fcc8f;border-color:#8fcc8f}
+    .btn-outline{background:transparent;color:var(--text);border-color:rgba(255,255,255,0.2)}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* CARDS */
+    .grid-2{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:600px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+    .grid-3{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:600px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:26px}
+    .card h3{color:var(--text);margin-bottom:6px}
+    .card-tag{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+
+    /* STATS */
+    .stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:36px 0}
+    @media(min-width:600px){.stats-row{grid-template-columns:repeat(4,1fr)}}
+    .stat-box{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:20px 14px;text-align:center}
+    .stat-num{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--text);display:block;margin-bottom:4px}
+    .stat-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em}
+
+    /* TIMELINE */
+    .timeline{margin-top:36px;border-top:1px solid var(--border)}
+    .tl-item{display:grid;grid-template-columns:1fr;gap:2px;padding:14px 0;border-bottom:1px solid var(--border)}
+    @media(min-width:560px){.tl-item{grid-template-columns:210px 1fr;gap:12px}}
+    .tl-co{font-weight:600;color:var(--text);font-size:0.9rem}
+    .tl-role{color:var(--muted);font-size:0.85rem}
+
+    /* LOGOS */
+    .logo-wall{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px}
+    @media(min-width:480px){.logo-wall{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:720px){.logo-wall{grid-template-columns:repeat(4,1fr)}}
+    .logo-item{background:var(--bg-logo);border-radius:8px;padding:22px 18px;display:flex;align-items:center;justify-content:center;min-height:78px}
+    .logo-item img{max-height:34px;max-width:110px;width:auto;height:auto;object-fit:contain}
+    .logo-ph{font-size:0.72rem;color:#999;text-align:center;line-height:1.4;font-style:italic}
+
+    /* PODCAST */
+    .ep-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+    @media(min-width:600px){.ep-grid{grid-template-columns:repeat(2,1fr)}}
+    .ep-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:20px 22px}
+    .ep-card strong{display:block;font-size:0.9375rem;color:var(--text);margin-bottom:5px}
+    .ep-card span{font-size:0.875rem;color:var(--muted)}
+
+    /* CTA */
+    .cta-sec{text-align:center}
+    .cta-sec h2{margin-bottom:14px}
+    .cta-sec > .container > p{max-width:480px;margin:0 auto 30px}
+    .btn-row-center{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+    /* FOOTER */
+    footer{background:var(--bg-card);border-top:1px solid var(--border);padding:36px 0}
+    .foot-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+    .foot-logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.875rem}
+    .foot-logo img{height:26px;width:auto}
+    .foot-copy{font-size:0.78rem;color:var(--muted);margin:0}
+  </style>
 </head>
 <body>
 
-<nav class="nav">
+<nav class="nav" id="top">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/images/rso.png" alt="However We Got Here" height="40" />
+    <a href="#home" class="nav-logo">
+      <img src="images/rso.png" alt="However We Got Here" />
+      <span>However We Got Here</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/about/">About Mike</a></li>
-      <li><a href="/podcast/">Podcast</a></li>
-      <li><a href="/outdoors/">Outdoors</a></li>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#why">Why</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="/contact/" class="btn btn-gold nav-cta">Book a 1:1 Session</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="#coaching" onclick="mm()">Coaching</a>
+  <a href="#about" onclick="mm()">About</a>
+  <a href="#why" onclick="mm()">Why This Exists</a>
+  <a href="#podcast" onclick="mm()">Podcast</a>
+  <a href="#contact" onclick="mm()">Contact</a>
+</div>
 
-<section class="hero">
-  <div class="hero-video-wrap">
-    <video id="heroVideo" autoplay muted playsinline>
-      <source src="/videos/hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay"></div>
-    <div id="heroFadeOverlay" style="position:absolute;inset:0;background:#1E2428;opacity:0;transition:opacity 0.7s ease;pointer-events:none;z-index:1;"></div>
-  </div>
-  <div class="container">
-    <div class="hero-content">
-      <p class="hero-eyebrow">However We Got Here</p>
-      <h1 class="serif">You carry a number.<br>You deserve a coach.</h1>
-      <p class="hero-sub">Sales coaching for BDRs and AEs from Mike Petroskey. 1:1 sessions and daily office hours. Bring a real deal, a real call, or a real problem.</p>
-      <div class="hero-actions">
-        <a href="/contact/" class="btn btn-gold">Book a 1:1 Session</a>
-        <a href="#" class="btn btn-outline">Join Office Hours</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
-</section>
-
-<section class="section section-mid">
-  <div class="container">
-    <p class="section-label">Two Ways to Work With Mike</p>
-    <h2 class="serif">Pick what fits right now.</h2>
-    <div class="grid-2 mt-40">
-      <div class="card">
-        <p class="pill">1:1 Session</p>
-        <h3>45 minutes. Private. Scheduled.</h3>
-        <p>You book it, you set the agenda. Bring a deal that's stalled, a call you want to break down, or a question you can't get a straight answer on. Mike will reach out to confirm a time.</p>
-        <a href="/contact/" class="btn btn-gold mt-24">Book a Session</a>
-      </div>
-      <div class="card">
-        <p class="pill">Office Hours</p>
-        <h3>MondayÃ¢ÂÂFriday, 12Ã¢ÂÂ1pm MST.</h3>
-        <p>Live, streaming format. Drop in with a question or just listen while other reps work through their situations. No appointment. No registration. Show up when you need it.</p>
-        <a href="#" class="btn btn-outline mt-24">Join Office Hours</a>
-      </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <p class="label">Sales Coaching</p>
+    <h1>You carry a number.<br>You deserve a coach.</h1>
+    <p class="hero-sub">Sales coaching for BDRs and AEs from Mike Petroskey. 1:1 sessions and daily office hours. Bring a real deal, a real call, or a real problem.</p>
+    <div class="btn-row">
+      <a href="#coaching" class="btn btn-primary">See How It Works</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
 </section>
 
-<section class="section section-cream">
+<!-- COACHING -->
+<section class="sec-alt" id="coaching">
   <div class="container">
-    <p class="section-label">What You Can Bring</p>
-    <h2 class="serif">Come with something real.</h2>
-    <div class="grid-3 mt-40">
-      <div class="card">
-        <h3>A stalled deal</h3>
-        <p>Three-month procurement loops. Buyers who went dark after a good call. Champions who stopped advocating. Bring the context and work through it live.</p>
-      </div>
-      <div class="card">
-        <h3>A call to break down</h3>
-        <p>Discovery calls that didn't land. A demo that lost momentum halfway through. A close attempt that fell apart. Play the tape and figure out the exact moment it turned.</p>
-      </div>
-      <div class="card">
-        <h3>A career decision</h3>
-        <p>BDR to AE. Take the offer or stay. Build a territory somewhere new. These decisions have real stakes. Talking through them with someone who's made them helps.</p>
-      </div>
+    <div class="sec-header">
+      <p class="label">Two Ways to Work With Mike</p>
+      <h2>Pick what fits right now.</h2>
     </div>
-  </div>
-</section>
-
-<section class="section section-mid">
-  <div class="container">
     <div class="grid-2">
-      <div class="page-body">
-        <p class="section-label">About Mike</p>
-        <h2 class="serif">Every role. Every level. Every size deal.</h2>
-        <p>He started dialing into accounts that had never heard of the company. No brand recognition, no warm leads, no territory. He learned to get meetings where there were no meetings to get, and worked deals where the buyer had no budget, no timeline, and no reason to call back. Then he built a whitespace territory in a rural market from nothing and closed it out.</p>
-        <p>Then he ran teams. Built a global BDR organization from 3 to 11 reps and grew pipeline from $2M to $20.8M. Took a product with under $100K in ARR and scaled it to over $10M. Along the way: transactional SaaS deals worth a couple thousand dollars and multi-million dollar enterprise closings. Tens of millions in pipeline built cold. The smallest SMB accounts and Global 500 enterprise accounts. Every quota structure. Every comp plan. Every kind of deal that can fall apart at the one-yard line.</p>
-        <p>The coaching runs alongside all of it. When Mike works through a situation with a rep, it's not hypothetical. He's been in that seat Ã¢ÂÂ carrying a number, trying to figure it out, with no one to call.</p>
-        <a href="/about/" class="btn btn-outline mt-24">Full Career Story</a>
+      <div class="card">
+        <p class="card-tag">1:1 Session</p>
+        <h3>45 minutes. Private. Scheduled.</h3>
+        <p>You book it, you set the agenda. Bring a deal that has stalled, a call you want to break down, or a question you cannot get a straight answer on. Mike will reach out to confirm a time.</p>
       </div>
-      <div>
-        <div class="card mb-24">
-          <p class="section-label">Where Mike Has Worked</p>
-          <h3 class="serif mb-16">Companies that shaped the playbook.</h3>
-          <div class="logo-wall">
-            <div class="logo-item"><img src="images/logos/compellent_logo.png" alt="Compellent" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/cambridge_computer_logo.png" alt="Cambridge Computer" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/dell_logo.png" alt="Dell Technologies" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/blue_medora_logo.png" alt="Blue Medora" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/arcsite_logo.png" alt="ArcSite" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/alta_vista_technology_logo.png" alt="Alta Vista Technology" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/comtrade_logo.png" alt="Comtrade" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-            <div class="logo-item"><img src="images/logos/integration_plumbers_logo.png" alt="Integration Plumbers" style="filter:brightness(0) invert(1);max-height:40px;max-width:120px;object-fit:contain;"></div>
-          </div>
+      <div class="card">
+        <p class="card-tag">Office Hours</p>
+        <h3>Monday through Friday, 12 to 1pm MST.</h3>
+        <p>Live, streaming format. Drop in with a question or just listen while other reps work through their situations. No appointment. No registration. Show up when you need it.</p>
+      </div>
+    </div>
+    <div style="margin-top:56px">
+      <p class="label">What You Can Bring</p>
+      <h2>Come with something real.</h2>
+      <div class="grid-3" style="margin-top:28px">
+        <div class="card">
+          <h3>A stalled deal</h3>
+          <p>Three-month procurement loops. Buyers who went dark after a good call. Champions who stopped advocating. Bring the context and work through it live.</p>
         </div>
         <div class="card">
-          <p class="section-label">Why This Exists</p>
-          <p class="mb-16">Mike got lucky. The managers he worked for actually taught him things: how to think through a deal, how to handle a hard conversation, how to get better. Not everyone gets that. This is his way of passing it on to the next generation of sellers who deserve the same shot.</p>
-          <a href="/why/" class="btn btn-outline">Why This Exists</a>
+          <h3>A cold call or email</h3>
+          <p>Something that is not landing. A sequence with no replies. An objection you keep hearing. Work through what is actually happening and build something that works.</p>
+        </div>
+        <div class="card">
+          <h3>A career question</h3>
+          <p>Whether to take the offer. How to ask for more territory. When to move from BDR to AE. Questions that actually matter to your trajectory.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-cream">
-  <div class="container center">
-    <p class="section-label">The Podcast</p>
-    <h2 class="serif">Real sessions. On the record.</h2>
-    <p class="wide-p mb-40">Some coaching sessions become podcast episodes. Real reps bring real deals Ã¢ÂÂ active situations, stalled closes, career decisions. Mike works through them live. No scripts, no role-plays, no made-up scenarios.</p>
-    <div class="hero-actions">
-      <a href="/podcast/" class="btn btn-outline">About the Podcast</a>
-      <a href="/listener/" class="btn btn-outline">For Listeners</a>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-header">
+      <p class="label">About Mike</p>
+      <h2>Started making cold calls.<br>Ended up running revenue.</h2>
+      <p>Demand gen rep at Compellent in 2009. CRO at Alta Vista in 2025. Every seat in between. He has cold-called into accounts that had never heard of the company. He has managed the BDR who could not get a meeting. He coaches from both sides.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><span class="stat-num">$4.5M</span><span class="stat-label">Closed at Compellent</span></div>
+      <div class="stat-box"><span class="stat-num">$20.8M</span><span class="stat-label">Pipeline at Blue Medora</span></div>
+      <div class="stat-box"><span class="stat-num">$10M+</span><span class="stat-label">ARR scaled</span></div>
+      <div class="stat-box"><span class="stat-num">$100M</span><span class="stat-label">Revenue owned now</span></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-co">Compellent / Dell</span><span class="tl-role">Demand Gen Rep, BDR, Outside AE (2009-2013)</span></div>
+      <div class="tl-item"><span class="tl-co">Cambridge Computers</span><span class="tl-role">Relationship Manager (2014)</span></div>
+      <div class="tl-item"><span class="tl-co">Dell Technologies</span><span class="tl-role">Solutions Sales Specialist (2015)</span></div>
+      <div class="tl-item"><span class="tl-co">Blue Medora / VMware</span><span class="tl-role">Director of Inside Global Sales (2015-2020)</span></div>
+      <div class="tl-item"><span class="tl-co">ArcSite</span><span class="tl-role">VP of Sales (2020-2024)</span></div>
+      <div class="tl-item"><span class="tl-co">However We Got Here</span><span class="tl-role">Founder and Fractional Sales Leader (2024-Present)</span></div>
+      <div class="tl-item" style="border-bottom:none"><span class="tl-co">Alta Vista Technology</span><span class="tl-role">Chief Revenue Officer (2025-Present)</span></div>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-inner container">
-    <div class="footer-brand">
-      <img src="/images/rso.png" alt="However We Got Here" height="32" />
-      <p>Sales coaching for BDRs and AEs.</p>
+<!-- WHY -->
+<section class="sec-alt" id="why">
+  <div class="container">
+    <div class="sec-header">
+      <p class="label">Why This Exists</p>
+      <h2>Nobody coached me.<br>I am fixing that.</h2>
+      <p>When I was a BDR at Compellent making cold calls into enterprise accounts nobody had heard of, I did not have anyone to ask. No mentor, no coach. Just trial and error. This is the resource I wish had existed.</p>
     </div>
-    <nav class="footer-nav">
-      <a href="/about/">About Mike</a>
-      <a href="/podcast/">Podcast</a>
-      <a href="/outdoors/">Outdoors</a>
-      <a href="/contact/">Book a 1:1 Session</a>
-    </nav>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Why coaching and not a course</h3>
+        <p>Sales courses teach frameworks. The problem is your prospect did not read the framework. They have a specific objection, a specific org chart, a specific timeline, and the framework does not cover the specific thing you are stuck on right now.</p>
+        <p>Coaching works on the actual situation in front of you. You bring your deal, your call, your real problem. We talk through it. That is different from a module on handling objections that applies to nobody in particular.</p>
+      </div>
+      <div class="card">
+        <h3>Who this is for</h3>
+        <p>BDRs who want to get better before anyone notices they need to. AEs who are carrying real quota and do not have time for advice that does not apply to their deal. Reps who are good at their jobs and want to get better at the parts that are still hard.</p>
+        <p>Mike got lucky. The managers he worked for actually taught him things: how to think through a deal, how to handle a hard conversation, how to get better. Not everyone gets that. This is his way of passing it on.</p>
+      </div>
+    </div>
   </div>
-  <div class="footer-bottom container">
-    <p>&copy; 2025 However We Got Here</p>
+</section>
+
+<!-- LOGOS -->
+<section id="companies">
+  <div class="container">
+    <div class="sec-header">
+      <p class="label">Where Mike Has Worked</p>
+      <h2>Companies that shaped the playbook.</h2>
+    </div>
+    <div class="logo-wall">
+      <div class="logo-item"><img src="images/logos/compellent_logo.png" alt="Compellent" /></div>
+      <div class="logo-item"><span class="logo-ph">Cambridge Computers<br>[Replace logo file]</span></div>
+      <div class="logo-item"><img src="images/logos/dell_logo.png" alt="Dell Technologies" /></div>
+      <div class="logo-item"><img src="images/logos/blue_medora_logo.png" alt="Blue Medora" /></div>
+      <div class="logo-item"><img src="images/logos/arcsite_logo.png" alt="ArcSite" /></div>
+      <div class="logo-item"><img src="images/logos/alta_vista_technology_logo.png" alt="Alta Vista Technology" /></div>
+      <div class="logo-item"><img src="images/logos/comtrade_logo.png" alt="Comtrade" /></div>
+      <div class="logo-item"><img src="images/logos/integration_plumbers_logo.png" alt="Integration Plumbers" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="sec-alt" id="podcast">
+  <div class="container">
+    <div class="sec-header">
+      <p class="label">The Podcast</p>
+      <h2>Real deals. Real calls.<br>Broken down live.</h2>
+      <p>The HWGT podcast comes out of real coaching sessions. Real reps bring real situations: active deals, call recordings, career decisions. Mike works through them on the record. No scripts. No role-plays. No made-up scenarios.</p>
+    </div>
+    <div class="ep-grid">
+      <div class="ep-card"><strong>Call Breakdown</strong><span>Rep shares a recording. Mike goes line by line.</span></div>
+      <div class="ep-card"><strong>Deal Review</strong><span>Active deal, full strategy session on what to do next.</span></div>
+      <div class="ep-card"><strong>Career Decision</strong><span>Real choice, real stakes, talked through live.</span></div>
+      <div class="ep-card"><strong>Office Hours Clip</strong><span>A sharp question from the live stream, worked through in full.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cta-sec" id="contact">
+  <div class="container">
+    <p class="label">Get Involved</p>
+    <h2>Bring a real problem.</h2>
+    <p>A stalled deal. A cold email that is not landing. A call you want to break down. Book a 1:1 session or show up to office hours. Come with something real to work on.</p>
+    <div class="btn-row-center">
+      <a href="contact/" class="btn btn-primary">Book a 1:1 Session</a>
+      <a href="#coaching" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <div class="foot-logo">
+        <img src="images/rso.png" alt="HWGT" />
+        <span>However We Got Here</span>
+      </div>
+      <p class="foot-copy">Sales coaching for BDRs and AEs. &copy; 2025 However We Got Here.</p>
+    </div>
   </div>
 </footer>
 
-<script src="/js/main.js"></script>
+<script>
+  const burger=document.getElementById('burger');
+  const mmenu=document.getElementById('mmenu');
+  burger.addEventListener('click',()=>mmenu.classList.toggle('open'));
+  function mm(){mmenu.classList.remove('open')}
+  document.addEventListener('click',e=>{
+    if(!burger.contains(e.target)&&!mmenu.contains(e.target))mmenu.classList.remove('open');
+  });
+</script>
 </body>
 </html>
